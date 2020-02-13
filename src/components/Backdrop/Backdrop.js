@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Skills = () => {
+const Backdrop = () => {
     return (
         <div>
-            Skills
+            
         </div>
     )
 }
 
-export default Skills
+export default Backdrop
