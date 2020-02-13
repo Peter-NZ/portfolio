@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Routes from '../../Routes';
 import Backdrop from '../../components/Backdrop/Backdrop'
-import Navigation from '../../components/Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 export default class Shell extends Component {
     render() {
         return (
