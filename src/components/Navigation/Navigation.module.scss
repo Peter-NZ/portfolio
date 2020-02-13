@@ -1,0 +1,33 @@
+.sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 5rem .5rem 1rem .5rem  ;
+    background-color:  rgba(#001216, 0.2);
+    height: 100vh;
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform .3s ease-in-out;
+    &__item {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: .2s ease-out;
+        color: rgba(white,0.5);
+        font-size: 1.2rem;
+        &:visited{
+            color: rgba(white, .5);
+        }
+        &:hover{color: white;
+            transform: translateX(.5rem);
+        }
+        &--active{ 
+            color: white;
+        }
+    }
+}
