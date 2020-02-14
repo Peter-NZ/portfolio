@@ -14,15 +14,16 @@ export class Meteor {
     this.x = x;
     this.y = y;
     this.speed = speed;
+    this.remove = false;
+    this.opacity = 1;
+    this.linex = this.x + 1000;
+    this.liney = this.y - 2000;
+    this.inversey = this.y + 2000;
+    this.now = undefined;
+    this.then = undefined;
+    this.delta = undefined;
   }
-  remove = false;
-  opacity = 1;
-  linex = this.x + 1000;
-  liney = this.y - 2000;
-  inversey = this.y + 2000;
-  now;
-  then;
-  delta;
+ 
   getAngle = () => {
     const dy = this.liney - this.y;
     const dx = this.linex - this.x;

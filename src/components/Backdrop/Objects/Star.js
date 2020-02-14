@@ -46,12 +46,7 @@ export class Star {
     this.ctx.closePath();
     this.ctx.fill();
   };
-  inRange = (number, bottom, top) => {
-    if (number <= top && number >= bottom) {
-      return true;
-    }
-    return false;
-  };
+ 
   update = () => {
     const tempThen = this.then;
     this.now = Date.now();
@@ -70,8 +65,5 @@ export class Star {
       this.sizeChange = -this.sizeChange;
     }
     this.size += this.sizeChange;
-  };
-  grow = () => {
-    this.size += this.size < 1.4 ? 0.2 : 0;
   };
 }

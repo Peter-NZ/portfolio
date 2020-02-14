@@ -13,7 +13,7 @@ export default class Backdrop extends Component {
   starPositions = [];
 
   componentDidMount = () => {
-    window.addEventListener("resize", this.updateDimensions);
+    window.addEventListener("resize", this.updateCanvasDimensions);
     this.setupCanvas();
   };
 
@@ -32,7 +32,6 @@ export default class Backdrop extends Component {
   };
 
   seedStars = starNumber => {
-      console.log(this.ctx);
     for (let i = 0; i < starNumber; i++) {
       const x = this.getRandint(1, 2400);
       const y = this.getRandint(1, 1000);
