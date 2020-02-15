@@ -1,0 +1,74 @@
+
+.card {
+    width: 20rem;
+    height: 27rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    margin-top: 4rem;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.2);
+    color: #00343f;
+    background-color: #fafafa;
+    text-decoration: none;
+    &__top{
+        position: relative;
+        height: 15rem;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+        color: #330867;
+        border-radius: 0.5rem;
+        transition: 0.4s ease-out;
+        background-image: linear-gradient(to bottom right, #30cfd0, #5b397d);
+    }
+    &__icon{
+        color: #00343f;
+        font-size: 3rem;
+    }
+    &__circle{
+        box-shadow: 0 0 4rem rgba(0,0,0,0.5);
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255,255,255,0.8);
+        transition: 0.5s ease-out;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 1rem;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right bottom, #00343f, #330867);
+    }
+    &__text {
+        font-size: 1.6rem;
+        display: inline-block;
+        padding: 0 1rem;
+        width: 100%;
+        text-align: center;
+    }
+    &:hover{
+        transform: translateY(-1rem);
+    }
+    &:hover &__top{
+        clip-path: polygon(0 0, 100% 0 ,100% 92%, 50% 100% , 0 92%);
+    }
+    &:hover &__circle{
+        background-color: white;
+    }
+}
