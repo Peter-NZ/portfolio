@@ -20,25 +20,25 @@ const Home = () => {
   const linkCardProps = [
     {
       title: "About",
-      href: "/about",
+      link: "/about",
       icon: "perm_identity",
       subTitle: "A few works about me"
     },
     {
       title: "Skills",
-      href: "/skills",
+      link: "/skills",
       icon: "whatshot",
       subTitle: "A selection of my technical skills"
     },
     {
       title: "My Work",
-      href: "/projects",
+      link: "/projects",
       icon: "trending_up",
       subTitle: "Some of the projects I've worked on"
     },
     {
       title: "Contact Me",
-      href: "/contact",
+      link: "/contact",
       icon: "mail_outline",
       subTitle: "Where you can drop me a line"
     }
@@ -47,7 +47,7 @@ const Home = () => {
     <LinkCard
       title={linkCard.title}
       icon={linkCard.icon}
-      href={linkCard.href}
+      link={linkCard.link}
       subTitle={linkCard.subTitle}
     ></LinkCard>
   ));

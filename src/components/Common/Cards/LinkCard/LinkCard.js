@@ -4,7 +4,7 @@ import classes from "./LinkCard.module.scss";
 import PropTypes from "prop-types";
 const LinkCard = props => {
   return (
-    <Link href={props.link} className={classes.card}>
+    <Link to={props.link} className={classes.card}>
       <div className={classes["card__top"]}>
         <div className={classes["card__circle"]}>
           <i className={`${classes["card__icon"]} material-icons`}>
