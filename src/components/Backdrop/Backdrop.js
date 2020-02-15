@@ -3,14 +3,14 @@ import { Meteor } from "./Objects/Meteor";
 import { Star } from "./Objects/Star";
 import styles from "./Backdrop.module.scss";
 export default class Backdrop extends Component {
-    constructor(props){
-        super(props);
-        this.canvasRef = React.createRef();
-        this.ctx = null;
-        this.stars = [];
-        this.meteors = [];
-    }
-  
+  constructor(props) {
+    super(props);
+    this.canvasRef = React.createRef();
+    this.ctx = null;
+    this.stars = [];
+    this.meteors = [];
+  }
+
   componentDidMount = () => {
     window.addEventListener("resize", this.updateCanvasDimensions);
     this.setupCanvas();
@@ -27,22 +27,21 @@ export default class Backdrop extends Component {
     this.ctx.canvas.width = window.innerWidth;
     this.ctx.canvas.height = window.innerHeight;
     this.seedStars(1000);
-    window.requestAnimationFrame(() => this.animationLoop());
+    window.requestAnimationFrame(this.animationLoop);
   };
 
   seedStars = starNumber => {
-
     for (let i = 0; i < starNumber; i++) {
-      const x = window.innerWidth > 2600 ? this.getRandint(1, window.innerWidth) : this.getRandint(1, 2600);
-      const y = window.innerHeight > 1000 ? this.getRandint(1, window.innerHeight) : this.getRandint(1, 1000);
+      const x =
+        window.innerWidth > 2600
+          ? this.getRandint(1, window.innerWidth)
+          : this.getRandint(1, 2600);
+      const y =
+        window.innerHeight > 1000
+          ? this.getRandint(1, window.innerHeight)
+          : this.getRandint(1, 1000);
       const radius = Math.random() * 0.8 + 0.2;
-      const star = new Star(
-        radius,
-        "rgb(255,255,255",
-        x,
-        y,
-        this.ctx
-      );
+      const star = new Star(radius, "rgb(255,255,255", x, y, this.ctx);
       this.stars.push(star);
       star.draw();
     }
@@ -54,7 +53,7 @@ export default class Backdrop extends Component {
   };
   update() {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-    this.stars.forEach(star=>{
+    this.stars.forEach(star => {
       star.draw();
     });
     for (let i = 0; i < this.meteors.length; i++) {
@@ -67,26 +66,24 @@ export default class Backdrop extends Component {
   }
   animationLoop = () => {
     this.update();
-    let x;
-    if (this.ctx.canvas.width < 500) {
-      x = this.getRandint(1, 800);
-    } else {
-      x = this.getRandint(1, this.ctx.canvas.width);
-    }
+    const x =
+      this.ctx.canvas.width < 500
+        ? this.getRandint(1, 600)
+        : this.getRandint(1, this.ctx.canvas.width);
     const y = 1;
-    if (this.getRandint(0, 800) < 5) {
+    this.getRandint(0, 800) < 5 &&
       this.meteors.push(new Meteor(4000, 3, "rgb(0,100,100", x, y, this.ctx));
-    }
-    this.stars.forEach(star=>{
+
+    this.stars.forEach(star => {
       star.draw();
     });
-    this.meteors.forEach(meteor=>{
+    this.meteors.forEach(meteor => {
       if (!meteor.remove) {
         meteor.setDelta();
         meteor.draw();
       }
     });
-    window.requestAnimationFrame(() => this.animationLoop());
+    window.requestAnimationFrame(this.v);
   };
 
   render() {
