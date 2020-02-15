@@ -66,7 +66,7 @@ export class Meteor {
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
     this.ctx.lineTo(this.linex, this.liney);
-    this.ctx.strokeStyle = this.color + ", " + this.opacity + ")";
+    this.ctx.strokeStyle = `${this.color},${this.opacity})`;
     this.ctx.stroke();
     this.ctx.closePath();
   };

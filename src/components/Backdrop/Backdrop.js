@@ -83,7 +83,7 @@ export default class Backdrop extends Component {
         meteor.draw();
       }
     });
-    window.requestAnimationFrame(this.v);
+    window.requestAnimationFrame(this.animationLoop);
   };
 
   render() {
