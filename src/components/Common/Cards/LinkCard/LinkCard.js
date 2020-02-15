@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import classes from "./LinkCard.module.scss";
 import PropTypes from "prop-types";
 const LinkCard = props => {
-    const topBackground = {
-        backgroundImage: props.backgroundImage
-    }
+  const topBackground = {
+    backgroundImage: props.backgroundImage
+  };
   return (
     <Link to={props.link} className={classes.card}>
       <div style={topBackground} className={classes["card__top"]}>
