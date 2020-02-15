@@ -6,12 +6,11 @@ export default class Backdrop extends Component {
     constructor(props){
         super(props);
         this.canvasRef = React.createRef();
+        this.ctx = null;
+        this.stars = [];
+        this.meteors = [];
     }
-  ctx = null;
-  stars = [];
-  meteors = [];
-  starPositions = [];
-
+  
   componentDidMount = () => {
     window.addEventListener("resize", this.updateCanvasDimensions);
     this.setupCanvas();
@@ -32,22 +31,18 @@ export default class Backdrop extends Component {
   };
 
   seedStars = starNumber => {
+
     for (let i = 0; i < starNumber; i++) {
-      const x = this.getRandint(1, 2400);
-      const y = this.getRandint(1, 1000);
-      const startX = x;
-      const startY = y;
+      const x = this.getRandint(1, window.innerWidth);
+      const y = this.getRandint(1, window.innerHeight - 200);
       const radius = Math.random() * 0.8 + 0.2;
       const star = new Star(
         radius,
         "rgb(255,255,255",
         x,
         y,
-        startX,
-        startY,
         this.ctx
       );
-      this.starPositions.push([x, y]);
       this.stars.push(star);
       star.draw();
     }
@@ -59,10 +54,9 @@ export default class Backdrop extends Component {
   };
   update() {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-    for (let i = 0; i < this.stars.length; i++) {
-      //star in reach of mouse
-      this.stars[i].update();
-    }
+    this.stars.forEach(star=>{
+      star.draw();
+    });
     for (let i = 0; i < this.meteors.length; i++) {
       this.meteors[i].update();
       if (this.meteors[i].remove) {
@@ -81,17 +75,17 @@ export default class Backdrop extends Component {
     }
     const y = 1;
     if (this.getRandint(0, 800) < 5) {
-      this.meteors.push(new Meteor(4000, 3, "rgb(0,100,100", x, y, this.ctx));
+      this.meteors.push(new Meteor(100, 3, "rgb(0,100,100", x, y, this.ctx));
     }
-    for (let i = 0; i < this.stars.length; i++) {
-      this.stars[i].draw();
-    }
-    for (let i = 0; i < this.meteors.length; i++) {
-      if (!this.meteors[i].remove) {
-        this.meteors[i].setDelta();
-        this.meteors[i].draw();
+    this.stars.forEach(star=>{
+      star.draw();
+    });
+    this.meteors.forEach(meteor=>{
+      if (!meteor.remove) {
+        meteor.setDelta();
+        meteor.draw();
       }
-    }
+    });
     window.requestAnimationFrame(() => this.animationLoop());
   };
 
