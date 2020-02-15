@@ -1,4 +1,4 @@
-
+@import "../../../../css/mixins.scss";
 .card {
     width: 20rem;
     height: 27rem;
@@ -13,6 +13,7 @@
     color: #00343f;
     background-color: #fafafa;
     text-decoration: none;
+    @include moveUpChildren(5);
     &__top{
         position: relative;
         height: 15rem;

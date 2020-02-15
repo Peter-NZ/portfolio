@@ -1,0 +1,11 @@
+.cards {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 120rem;
+    position: relative;
+    min-height: 27rem;
+}
