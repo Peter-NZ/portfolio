@@ -1,5 +1,5 @@
 import React from "react";
-import Shell from "./containers/Shell/Shell";
+import Shell from "./Shell/Shell";
 import { BrowserRouter } from "react-router-dom";
 function App() {
   return (

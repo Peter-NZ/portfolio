@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import Cockpit from "../../Common/Cockpit/Cockpit";
 const About = () => {
-    return (
-        <div>
-            About
-        </div>
-    )
-}
+    
+  return (
+    <Cockpit
+      title="About Me"
+    ></Cockpit>
+  );
+};
 
-export default About
+export default About;

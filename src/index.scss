@@ -1,3 +1,6 @@
+@import "css/animations.scss";
+@import "css/mixins.scss";
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -29,16 +32,11 @@ body {
   flex-direction: row;
 }
 
-@keyframes moveinbottom{
-  0% {
-      opacity: 0;
-      transform:translatey(10rem);
-  }
-  70% {
-      transform:translatey(-1.5rem);
-  }
-  100%{
-      opacity: 1;
-      transform: translate(0);
+@mixin moveUpChildren($children) {
+  @for $i from 1 through $children {
+    &:nth-child(#{$i}) {
+      animation: moveinbottom 1s ease-in-out #{$i * .1}s;
+      animation-fill-mode: backwards;
+    }
   }
 }

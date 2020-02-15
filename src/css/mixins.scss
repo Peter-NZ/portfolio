@@ -1,0 +1,9 @@
+@import "./animations.scss";
+@mixin moveUpChildren($children) {
+    @for $i from 1 through $children {
+      &:nth-child(#{$i}) {
+        animation: moveinbottom 1s ease-in-out #{$i * .1}s;
+        animation-fill-mode: backwards;
+      }
+    }
+}

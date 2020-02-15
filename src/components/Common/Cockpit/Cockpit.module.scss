@@ -1,0 +1,44 @@
+@import "../../../css//mixins.scss";
+.portfolio-heading {
+    &--main:global {
+        font-size: 6.5rem;
+        letter-spacing: 1rem;
+        display: block;
+        text-align: center;
+        font-weight: 300;
+        animation: moveinbottom 1s ease-in-out ;
+        animation-fill-mode: backwards;
+        text-transform: uppercase;
+    }
+    &--sub:global {
+        display: block;
+        text-align: center;
+        letter-spacing: 1rem;
+        font-weight: 500;
+        animation: moveinbottom 1s ease-in-out .1s;
+        animation-fill-mode: backwards;
+    }
+    &__link:global  {
+        color: white;
+        font-size: 1.8rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: .2s ease-out;
+        @include moveUpChildren(3);
+        &:not(:first-child){
+            margin-left: 4rem;
+        }
+        &:visited {
+            color: white;
+        }
+        &:hover {
+            transform: scale(1.1) translateY(-.3rem);
+        }
+    }
+    &__links {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
+
+    }
+}
