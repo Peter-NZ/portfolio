@@ -13,7 +13,7 @@
     color: #00343f;
     background-color: #fafafa;
     text-decoration: none;
-    @include moveUpChildren(5);
+    @include moveUpChildren(4);
     &__top{
         position: relative;
         height: 15rem;

@@ -1,8 +1,8 @@
 import React from "react";
-import classes from "./LinkCard.module.scss";
+import classes from "./WideCard.module.scss";
 import PropTypes from "prop-types";
 
-const WideCard = () => {
+const WideCard = props => {
   const topBackground = {
     backgroundImage: props.backgroundImage
   };
@@ -25,7 +25,7 @@ const WideCard = () => {
 
 export default WideCard;
 
-LinkCard.propTypes = {
+WideCard.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
