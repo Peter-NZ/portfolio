@@ -33,8 +33,8 @@ export default class Backdrop extends Component {
   seedStars = starNumber => {
 
     for (let i = 0; i < starNumber; i++) {
-      const x = this.getRandint(1, window.innerWidth);
-      const y = this.getRandint(1, window.innerHeight - 200);
+      const x = window.innerWidth > 2600 ? this.getRandint(1, window.innerWidth) : this.getRandint(1, 2600);
+      const y = window.innerHeight > 1000 ? this.getRandint(1, window.innerHeight) : this.getRandint(1, 1000);
       const radius = Math.random() * 0.8 + 0.2;
       const star = new Star(
         radius,
@@ -75,7 +75,7 @@ export default class Backdrop extends Component {
     }
     const y = 1;
     if (this.getRandint(0, 800) < 5) {
-      this.meteors.push(new Meteor(100, 3, "rgb(0,100,100", x, y, this.ctx));
+      this.meteors.push(new Meteor(4000, 3, "rgb(0,100,100", x, y, this.ctx));
     }
     this.stars.forEach(star=>{
       star.draw();

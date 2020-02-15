@@ -43,7 +43,7 @@ export class Meteor {
     this.x -= distance * Math.cos(angleRad);
     this.y += distance * Math.sin(angleRad);
     this.inversey -= distance * Math.sin(angleRad);
-    this.opacity = (this.inversey / distance) * 0.01;
+    this.opacity = (this.inversey / distance) * 0.05;
     if (this.inversey <= 0) {
       this.remove = true;
     }
@@ -59,7 +59,7 @@ export class Meteor {
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
     this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, true);
-    this.ctx.fillStyle = this.color + ", " + this.opacity + ")";
+    this.ctx.fillStyle = `${this.color},${this.opacity})`;
     this.ctx.fill();
     this.ctx.closePath();
 
