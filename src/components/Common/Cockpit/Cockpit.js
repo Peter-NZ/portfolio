@@ -21,6 +21,11 @@ const Cockpit = props => {
               {props.subTitle}
             </span>
           ) : null}
+           {props.label ? (
+            <span className={styles["portfolio-heading--label"]}>
+              {props.label}
+            </span>
+          ) : null}
         </h1>
       </header>
       {props.links ? <nav className={styles['portfolio-heading__links']}>{links}</nav> : null}
@@ -33,6 +38,7 @@ export default Cockpit;
 Cockpit.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string,
+  label: PropTypes.string,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string.isRequired,

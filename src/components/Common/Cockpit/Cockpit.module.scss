@@ -18,6 +18,14 @@
         animation: moveinbottom 1s ease-in-out .1s;
         animation-fill-mode: backwards;
     }
+    &--label:global {
+        display: block;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 500;
+        animation: moveinbottom 1s ease-in-out 0.1s;
+        animation-fill-mode: backwards;
+    }
     &__link:global  {
         color: white;
         font-size: 1.8rem;

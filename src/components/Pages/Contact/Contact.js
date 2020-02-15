@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import Cockpit from "../../Common/Cockpit/Cockpit";
 
 const Contact = () => {
-    return (
-        <div>
-            Contact
-        </div>
-    )
-}
+  return (
+    <Cockpit
+      title="Contact Me"
+      label="Feel free to drop me a line on any of the bellow channels"
+    ></Cockpit>
+  );
+};
 
-export default Contact
+export default Contact;
