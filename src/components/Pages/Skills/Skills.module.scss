@@ -1,18 +1,19 @@
 @import "../../../css//mixins.scss";
 
 .skills{
+    margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(10, 7.5rem);
+    grid-template-columns: repeat(10, 8rem);
     grid-template-rows: repeat(3, 1fr); 
 }
 
 .skill-hexagon {
-    width: 15rem;
-    height: 14rem;
+    width: 14rem;
+    height: 15rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    //margin-top: -2rem;
+    margin-top: -2rem;
     transition: 0.2s ease-out;
     color: #fff;
     font-size: 1.6rem;

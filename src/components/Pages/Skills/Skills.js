@@ -11,7 +11,7 @@ const Skills = () => {
     { name: "Git", emphasis: true },
     { name: "Stylus", emphasis: true },
     { name: "Angular CLI", emphasis: true },
-    { name: "Agile Methodology", emphasis: true },
+    { name: "Agile", emphasis: true },
     { name: "Angular Material", emphasis: false },
     { name: "SCSS", emphasis: false },
     { name: "TypeScript", emphasis: false },
@@ -23,14 +23,15 @@ const Skills = () => {
     let row = 1;
     if (i > 4) {
       row = i < 9 ? 2 : 3;
-      if(startCol > 10){
+      if(startCol >= 10 ){
         startCol = row === 3 ? 1 : 2;
       }
     }
     const gridPos = `${row} / ${startCol} / ${row} / ${startCol + 2}`;
     startCol += 2;
+    const skillClasses = skill.emphasis ? [classes["skill-hexagon"], classes["emphasis"]].join(" ") : classes["skill-hexagon"];
     return (
-      <div style={{ gridArea: gridPos }} className={classes["skill-hexagon"]}>
+      <div style={{ gridArea: gridPos }} className={skillClasses}>
         <span>{skill.name}</span>
       </div>
     );
