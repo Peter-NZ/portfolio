@@ -1,15 +1,22 @@
 @import "../../../css//mixins.scss";
 
+.skills{
+    display: grid;
+    grid-template-columns: repeat(10, 7.5rem);
+    grid-template-rows: repeat(3, 1fr); 
+}
+
 .skill-hexagon {
-    width: 14rem;
-    height: 15rem;
+    width: 15rem;
+    height: 14rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -2rem;
+    //margin-top: -2rem;
     transition: 0.2s ease-out;
     color: #fff;
     font-size: 1.6rem;
+    background-image: linear-gradient(to top left, rgba(36,57,73,0.3), rgba(81,127,164,0.3));
     @include hexagon;
     @include moveUpChildren(20);
     &:hover {
