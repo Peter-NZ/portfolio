@@ -4,7 +4,7 @@ import classes from "./LargeCard.module.scss";
 
 const LargeCard = props => {
   const bottomListItems = props.bottomListItems.map(listItem => (
-    <li className={classes["card__list-item"]}>
+    <li key={listItem.label} className={classes["card__list-item"]}>
       <div
         className={classes["card__hexagon"]}
         style={{ backgroundColor: listItem.color }}
@@ -14,8 +14,8 @@ const LargeCard = props => {
   ));
   return (
     <section className={classes.card}>
-      <div style={topBackground} className={classes["card__top"]}>
-        <div className={classes["card__background"]}></div>
+      <div  className={classes["card__top"]}>
+        <div style={props.backgroundImage} className={classes["card__background"]}></div>
         <div className={classes["card__circle"]}>
           <i className={`${classes["card__icon"]} material-icons`}>
             {props.icon}
@@ -27,7 +27,7 @@ const LargeCard = props => {
         <p className={classes["card__text"]}>{props.text}</p>
       </div>
       <div className={classes["card__bottom"]}>
-        <div className={classes["card__background"]}></div>
+        <div style={props.backgroundImage} className={classes["card__background"]}></div>
         <ul className={classes["card__list-items"]}>{bottomListItems}</ul>
       </div>
     </section>
