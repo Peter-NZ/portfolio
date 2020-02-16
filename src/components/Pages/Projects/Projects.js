@@ -7,21 +7,30 @@ const Projects = () => {
   const projectCardProps = [
     {
       title: "Electronic Travel Authority",
-      icon: "perm_identity",
+      icon: "flight_takeoff",
       text: "A few works about me",
-      bottomListItems: [{color: '#a2443f', label: 'Angular'}, {color: '#a2443f', label: 'React'} ]
+      bottomListItems: [
+        { color: "#a2443f", label: "Angular" },
+        { color: "#a2443f", label: "React" }
+      ]
     },
     {
       title: "Personal Portfolio Site",
-      icon: "whatshot",
+      icon: "perm_identity",
       text: "A selection of my technical skills",
-      bottomListItems: [{color: '#a2443f', label: 'Angular'}, {color: '#a2443f', label: 'React'} ]
+      bottomListItems: [
+        { color: "#a2443f", label: "Angular" },
+        { color: "#a2443f", label: "React" }
+      ]
     },
     {
       title: "Various Prototypes",
-      icon: "trending_up",
+      icon: "call_split",
       text: "Some of the projects I've worked on",
-      bottomListItems: [{color: '#a2443f', label: 'Angular'}, {color: '#a2443f', label: 'React'} ]
+      bottomListItems: [
+        { color: "#a2443f", label: "Angular" },
+        { color: "#a2443f", label: "Vue JS" }
+      ]
     }
   ];
   const projectCards = projectCardProps.map(projectCard => (
@@ -36,12 +45,12 @@ const Projects = () => {
   ));
   return (
     <React.Fragment>
-    <Cockpit
-      title="My Work"
-      label="Some of the projects I have worked on professionally and in my spare time"
-    ></Cockpit>
-    <div className={classes.cards}>{projectCards}</div>
-  </React.Fragment>
+      <Cockpit
+        title="My Work"
+        label="Some of the projects I have worked on professionally and in my spare time"
+      ></Cockpit>
+      <div className={classes.cards}>{projectCards}</div>
+    </React.Fragment>
   );
 };
 
