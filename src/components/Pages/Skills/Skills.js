@@ -11,10 +11,10 @@ const Skills = () => {
     { name: "Git", emphasis: true },
     { name: "Stylus", emphasis: true },
     { name: "Angular CLI", emphasis: true },
-    { name: "Agile", emphasis: true },
+    { name: "RxJS", emphasis: true },
     { name: "Angular Material", emphasis: false },
     { name: "SCSS", emphasis: false },
-    { name: "TypeScript", emphasis: false },
+    { name: "TypeScript", emphasis: true },
     { name: "Python", emphasis: false },
     { name: "VueJS", emphasis: false }
   ];
