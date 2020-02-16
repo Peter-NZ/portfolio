@@ -7,3 +7,16 @@
       }
     }
 }
+
+
+@mixin iconCircle($size) {
+  box-shadow: 0 0 4rem rgba(0,0,0,0.5);
+  border-radius: 50%;
+  width: #{$size}rem;
+  height: #{$size}rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,0.8);
+  transition: 0.5s ease-out;
+}

@@ -36,15 +36,7 @@
         clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100% , 0 100%);
     }
     &__circle {
-        box-shadow: 0 0 4rem rgba(0,0,0,0.5);
-        border-radius: 50%;
-        width: 7rem;
-        height: 7rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255,255,255,0.8);
-        transition: 0.5s ease-out;
+        @include iconCircle(7);
     }
     &__icon{
         color: #00343f;
