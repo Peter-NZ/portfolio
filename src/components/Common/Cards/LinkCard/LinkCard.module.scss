@@ -1,4 +1,5 @@
 @import "../../../../css/mixins.scss";
+
 .card {
     width: 20rem;
     height: 27rem;
@@ -33,7 +34,6 @@
         top: 50%;
         transform: translate(-50%, -50%);
         @include iconCircle(5);
-
     }
     &__title {
         font-size: 2rem;

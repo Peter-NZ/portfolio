@@ -1,0 +1,30 @@
+@import "../../../css//mixins.scss";
+
+.skill-hexagon {
+    width: 14rem;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2rem;
+    transition: 0.2s ease-out;
+    color: #fff;
+    font-size: 1.6rem;
+    @include hexagon;
+    @include moveUpChildren(20);
+    &:hover {
+        background-color: rgba(204,204,204,0.1);
+    }
+}
+
+.emphasis {
+    background-image: linear-gradient(to bottom right, rgba(#3a7bd5, 0.5) , rgba(#3a6073, 0.5));
+    &:hover{
+        background-color: rgba(204,204,204,0.2);
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
