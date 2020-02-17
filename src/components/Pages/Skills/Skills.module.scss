@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8rem, 8rem));
     grid-template-rows: repeat(3, 1fr);
+    @include moveUpChildren(20);
 }
 
 .skill-hexagon {
@@ -19,7 +20,6 @@
     font-size: 1.6rem;
     background-image: linear-gradient(to top left, rgba(36,57,73,0.3), rgba(81,127,164,0.3));
     @include hexagon;
-    @include moveUpChildren(20);
     &:hover {
         background-color: rgba(204,204,204,0.1);
     }
@@ -38,10 +38,12 @@
 }
 
 @media (max-width: 925px){
+    
     .skills {
       margin-top: 24rem; 
       transform: rotate(-90deg);
     }
+
     .skill-hexagon span {
         transform: rotate(90deg);
     }

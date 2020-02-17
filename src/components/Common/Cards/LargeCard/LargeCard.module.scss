@@ -11,7 +11,6 @@ $card-gradient: linear-gradient(45deg, rgba(79, 79, 79, 0.03) 0%, rgba(79, 79, 7
     background-color: rgba(243,243,243,0.9);
     box-shadow: 0 1.5rem 2rem rgba(0,0,0,0.2), 0 2rem 5rem rgba(0,0,0,0.2);
     margin-bottom: 4rem;
-    @include moveUpChildren(3);
     &__text {
         font-size: 1.6rem;
         padding: 1rem 1.5rem;

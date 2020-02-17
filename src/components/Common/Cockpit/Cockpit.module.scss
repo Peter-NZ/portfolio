@@ -32,7 +32,7 @@
         text-decoration: none;
         display: inline-block;
         transition: .2s ease-out;
-        @include moveUpChildren(3);
+        @include moveUp(3);
         &:not(:first-child){
             margin-left: 4rem;
         }

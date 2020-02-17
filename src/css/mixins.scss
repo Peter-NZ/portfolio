@@ -2,12 +2,22 @@
 
 @mixin moveUpChildren($children) {
     @for $i from 1 through $children {
-      &:nth-child(#{$i}) {
+      & > :nth-child(#{$i}) {
         animation: moveinbottom 1s ease-in-out #{$i * .1}s;
         animation-fill-mode: backwards;
       }
     }
 }
+
+@mixin moveUp($children) {
+  @for $i from 1 through $children {
+    &:nth-child(#{$i}) {
+      animation: moveinbottom 1s ease-in-out #{$i * .1}s;
+      animation-fill-mode: backwards;
+    }
+  }
+}
+
 
 @mixin iconCircle($size) {
   box-shadow: 0 0 4rem rgba(0,0,0,0.5);
