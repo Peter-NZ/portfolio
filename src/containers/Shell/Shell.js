@@ -3,11 +3,25 @@ import Routes from '../../Routes';
 import Backdrop from '../../components/Backdrop/Backdrop'
 import Navigation from '../../components/Navigation/Navigation';
 import classes from './Shell.module.scss';
+import LayoutContext from '../../context/LayoutContext';
 export default class Shell extends Component {
+    state = {
+        openSidenav: true
+    }
+    toggleSidenav = ()=>{
+        console.log('test emission');
+        this.setState(prevState=>({openSidenav: !prevState.openSidenav}));
+    }
     render() {
         return (
             <React.Fragment>
-                <Navigation/>
+                <LayoutContext.Provider 
+                value={{
+                    openSidenav: this.state.openSidenav,
+                    toggleSidenav: this.toggleSidenav
+                }}>
+                    <Navigation/>
+                </LayoutContext.Provider>
                 <div className={classes['center-wrapper']}>
                     <Routes/>
                 </div>

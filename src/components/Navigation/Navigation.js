@@ -1,14 +1,26 @@
-import React from 'react'
-import {routeLinks} from '../../Routes';
-import NavigationItem from './NavigationItem/NavigationItem'
-import classes from './Navigation.module.scss';
-const Navigation = () => {
-    const NavItems = routeLinks.map(routeLink=><NavigationItem key={routeLink.title} itemSettings={routeLink}/>)
-    return (
-        <nav className={classes.sidenav}>
-            {NavItems}
-        </nav>
-    )
-}
+import React, {useContext} from "react";
+import { routeLinks } from "../../Routes";
+import NavigationItem from "./NavigationItem/NavigationItem";
+import classes from "./Navigation.module.scss";
+import NavigationButton from "./NavigationButton/NavigationButton";
+import LayoutContext from "../../context/LayoutContext";
 
-export default Navigation
+const Navigation = props => {
+  const NavItems = routeLinks.map(routeLink => (
+    <NavigationItem key={routeLink.title} itemSettings={routeLink} />
+  ));
+  const layout = useContext(LayoutContext);
+  console.log(layout);
+  const navClasses = layout.openSidenav ? [classes.sidenav] : [classes.sidenav, classes['sidenav--hidden']].join(' ');
+  return (
+    <React.Fragment>
+      <NavigationButton
+        open={layout.openSidenav}
+        toggleSidenav={layout.toggleSidenav}
+      />
+      <nav className={navClasses}>{NavItems}</nav>
+    </React.Fragment>
+  );
+};
+
+export default Navigation;

@@ -5,11 +5,14 @@
     padding: 5rem .5rem 1rem .5rem  ;
     background-color:  rgba(#001216, 0.2);
     height: 100vh;
-    z-index: 998;
+    z-index: 899;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: transform .3s ease-in-out;
+    &--hidden {
+        transform: translateX(-80rem);
+    }
     &__item {
         text-decoration: none;
         display: flex;
@@ -30,4 +33,9 @@
             color: white;
         }
     }
+}
+
+.toggle-button {
+    position: relative;
+    z-index: 900;
 }
