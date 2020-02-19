@@ -6,11 +6,11 @@ import classes from './Shell.module.scss';
 import LayoutContext from '../../context/LayoutContext';
 export default class Shell extends Component {
     state = {
-        openSidenav: true
+        openSidenav: false
     }
     toggleSidenav = ()=>{
-        console.log('test emission');
         this.setState(prevState=>({openSidenav: !prevState.openSidenav}));
+        console.log(this.state.openSidenav);
     }
     render() {
         return (

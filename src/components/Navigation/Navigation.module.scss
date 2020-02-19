@@ -36,6 +36,38 @@
 }
 
 .toggle-button {
-    position: relative;
+    position: fixed;
     z-index: 900;
 }
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(100);
+    }
+}
+
+.mobile-nav {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: pink;
+    position: fixed;
+    &--enter {
+        transform: scale(1);
+    }
+    &--enter-active{
+        transform: scale(80);
+        transition: .4s ease-in-out;
+    }
+    &--exit {
+        transform: scale(80);
+    }
+    &--exit-active{
+        transform: scale(1);
+        transition: .4s ease;
+    }
+}
+
