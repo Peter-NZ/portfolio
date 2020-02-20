@@ -21,13 +21,14 @@ const Navigation = props => {
 
   return (
     <React.Fragment>
+      <CSSTransition unmountOnExit timeout={200} in={layout.openSidenav} classNames={animationClasses}>
+      <nav className={classes["mobile-nav"]}></nav>
+    </CSSTransition>
       <NavigationButton
         open={layout.openSidenav}
         toggleSidenav={layout.toggleSidenav}
       />
-      <CSSTransition unmountOnExit timeout={200} in={layout.openSidenav} classNames={animationClasses}>
-      <nav className={classes["mobile-nav"]}></nav>
-    </CSSTransition>
+      
       <nav className={classes.sidenav}>{NavItems}</nav>
     </React.Fragment>
   );

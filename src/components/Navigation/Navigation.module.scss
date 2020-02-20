@@ -37,8 +37,40 @@
 
 .toggle-button {
     position: fixed;
-    z-index: 900;
+    top: 3rem;
+    left: 1.8rem;
+    z-index: 901;
+    width: 3.3rem;
+    height: 2.6rem;
+    background-color: transparent;
+    border: none;
+    text-align:center;
+    cursor: pointer;
+    &__icon{
+        top: 1rem;
+        &,
+        &::after,
+        &::before{
+            width: 3rem;
+            height: 2px;
+            background-color: #ffffff;
+            content:"";
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            transition: all .3s ease-in-out;
+        }
+        &::before{
+            top: -1rem;
+        }
+        &::after{
+            top: 1rem;
+        }
+    }   
 }
+
+   
+
 
 @keyframes scaleUp {
     from {
@@ -53,14 +85,28 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-color: pink;
+    background-image: radial-gradient(circle at bottom center, rgb(141, 118, 197),rgb(119, 60, 147));    
     position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 900;
     &--enter {
         transform: scale(1);
     }
     &--enter-active{
         transform: scale(80);
         transition: .4s ease-in-out;
+        & + .toggle-button .toggle-button__icon{
+            background-color: transparent;
+            &::after {
+                top: 0;
+                transform: rotate(135deg);
+            }
+            &::before {
+                top: 0;
+                transform: rotate(-135deg);
+            }
+        }
     }
     &--exit {
         transform: scale(80);
@@ -68,6 +114,12 @@
     &--exit-active{
         transform: scale(1);
         transition: .4s ease;
+    }
+}
+
+@media (max-width:500px){
+    .sidenav {
+        transform: translateX(-80rem);
     }
 }
 
