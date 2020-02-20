@@ -85,8 +85,8 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-image: radial-gradient(circle at bottom center, rgb(141, 118, 197),rgb(119, 60, 147));    
     position: fixed;
+    background-image:radial-gradient(circle at center center, rgba(0, 62, 75, .9),rgba(0, 6, 7, .9));
     top: 1rem;
     left: 1rem;
     z-index: 900;
