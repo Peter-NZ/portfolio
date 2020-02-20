@@ -7,29 +7,54 @@ import LayoutContext from "../../context/LayoutContext";
 import { CSSTransition } from "react-transition-group";
 
 const Navigation = props => {
-  const NavItems = routeLinks.map(routeLink => (
-    <NavigationItem key={routeLink.title} itemSettings={routeLink} />
-  ));
   const layout = useContext(LayoutContext);
-  const animationClasses = {
-    enter: classes['mobile-nav--enter'],
-    enterActive: classes['mobile-nav--enter-active'],
-    enterDone: classes['mobile-nav--enter-active'],
-    exit: classes['mobile-nav--exit'],
-    exitActive: classes['mobile-nav--exit-active']
-  };
 
+  const NavItems = routeLinks.map(routeLink => (
+    <NavigationItem
+      mobile={layout.openSidenav}
+      key={routeLink.title}
+      itemSettings={routeLink}
+    />
+  ));
+  const backgroundAnimationClasses = {
+    enter: classes["background--enter"],
+    enterActive: classes["background--enter-active"],
+    enterDone: classes["background--enter-active"],
+    exit: classes["background--exit"],
+    exitActive: classes["background--exit-active"]
+  };
+  const navAnimationClasses = {
+    enter: classes["mobile-nav--enter"],
+    enterActive: classes["mobile-nav--enter-active"],
+    enterDone: classes["mobile-nav--enter-active"],
+    exit: classes["mobile-nav--exit"],
+    exitActive: classes["mobile-nav--exit-active"]
+  };
   return (
     <React.Fragment>
-      <CSSTransition unmountOnExit timeout={200} in={layout.openSidenav} classNames={animationClasses}>
-      <nav className={classes["mobile-nav"]}></nav>
-    </CSSTransition>
+      <CSSTransition
+        unmountOnExit
+        timeout={200}
+        in={layout.openSidenav}
+        classNames={backgroundAnimationClasses}
+      >
+        <div className={classes["background"]}></div>
+      </CSSTransition>
       <NavigationButton
         open={layout.openSidenav}
         toggleSidenav={layout.toggleSidenav}
       />
+      <CSSTransition
+        unmountOnExit
+        timeout={400}
+        in={layout.openSidenav}
+        classNames={navAnimationClasses}
+      >
+        <nav className={classes["mobile-nav"]}>{NavItems}</nav>
+      </CSSTransition>
       
-      <nav className={classes.sidenav}>{NavItems}</nav>
+
+      {!layout.openSidenav && <nav className={classes.sidenav}>{NavItems}</nav>}
     </React.Fragment>
   );
 };
