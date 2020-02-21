@@ -31,7 +31,7 @@ const Skills = () => {
     startCol += 2;
     const skillClasses = skill.emphasis ? [classes["skill-hexagon"], classes["emphasis"]].join(" ") : classes["skill-hexagon"];
     return (
-      <div style={{ gridArea: gridPos }} className={skillClasses}>
+      <div key={skill.name} style={{ gridArea: gridPos }} className={skillClasses}>
         <span>{skill.name}</span>
       </div>
     );

@@ -19,6 +19,7 @@ const Contact = () => {
   ];
   const contactLinks = contactLinkProps.map(link => (
     <ContactLink
+      key={link.title}
       title={link.title}
       subTitle={link.subTitle}
       href={link.href}

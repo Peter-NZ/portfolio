@@ -26,6 +26,7 @@ const About = () => {
   ];
   const wideCards = wideCardProps.map(wideCard => (
     <WideCard
+      key={wideCard.title}
       title={wideCard.title}
       icon={wideCard.icon}
       text={wideCard.text}
