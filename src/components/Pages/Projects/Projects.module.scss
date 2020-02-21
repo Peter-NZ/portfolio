@@ -9,3 +9,9 @@
   justify-content: space-evenly;
   @include moveUpChildren(3);
 }
+
+@media(max-width:400px){
+  .cards{
+    width: 100%;
+  }
+}

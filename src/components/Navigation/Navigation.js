@@ -17,6 +17,7 @@ const Navigation = props => {
       mobile={true}
       key={routeLink.title}
       itemSettings={routeLink}
+      toggleSidenav={layout.toggleSidenav}
     />
   ));
   const backgroundAnimationClasses = {

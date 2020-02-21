@@ -12,3 +12,9 @@
     min-height: 27rem;
     @include moveUpChildren(4);
 }
+
+@media(max-width:400px){
+    .cards{
+      width: 100%;
+    }
+  }

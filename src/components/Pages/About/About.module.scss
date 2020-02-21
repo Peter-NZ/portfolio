@@ -8,3 +8,15 @@
     flex-wrap: wrap;
     @include moveUpChildren(3);
 }
+
+@media (max-width:950px){
+    .cards {
+        width: 90%;
+    }
+}
+
+@media (max-width:375px){
+    .cards {
+        width: 100%;
+    }
+}

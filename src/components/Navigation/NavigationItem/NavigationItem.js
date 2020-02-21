@@ -8,6 +8,7 @@ const NavigationItem = props => {
       activeClassName={classes["sidenav__item--active"]}
       className={props.mobile ?classes['sidenav__item--mobile']: classes['sidenav__item']}
       to={props.itemSettings.path}
+      onClick={props.toggleSidenav}
     >
       <i className={`${props.mobile ? classes['sidenav__icon--mobile']: classes['sidenav__icon']} material-icons`}>
         {props.itemSettings.icon}
