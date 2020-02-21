@@ -42,9 +42,6 @@
                 color: white;
                 transform: translateY(-.2rem);
             }
-            &:active {
-                transform: translateY(.5rem);
-            }
         }
         &:visited{
             color: rgba(white, .5);
@@ -69,6 +66,9 @@
     background-color: transparent;
     border: none;
     text-align:center;
+    display: none;
+    transition:opacity .3s ease-in;
+    opacity: 0;
     cursor: pointer;
     &__icon{
         top: 1rem;
@@ -102,6 +102,21 @@
     }
 }
 
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50rem);
+    }
+    70%{
+        opacity: .7;
+        transform: translateX(1.5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .mobile-nav {
     display: flex;
     flex-direction: column;
@@ -111,19 +126,18 @@
     height: 100%;
     position: fixed;
     z-index: 910;
-    &--enter {
-       opacity: 0;
-    }
-    &--enter-active{
-        opacity: 1;
-        transition: .4s ease-in-out;
+    &--enter-done{
+        animation: slideIn 1s ease-in-out;
+        animation-fill-mode: forwards;
     }
     &--exit {
-        opacity: 1; 
+        transform: translateX(0);
+        opacity: 1;
     }
     &--exit-active{
+        transform: translateX(-100rem);
         opacity: 0;
-        transition: .4s ease-in-out;
+        transition: .2s ease-in-out;
     }
 }
 
@@ -163,9 +177,14 @@
     }
 }
 
-@media (max-width:500px){
+@media (max-width: 769px){
     .sidenav {
         transform: translateX(-80rem);
     }
+    .toggle-button{
+        display:block;
+        opacity: 1;
+    }
 }
+
 

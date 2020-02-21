@@ -9,9 +9,12 @@ import { CSSTransition } from "react-transition-group";
 const Navigation = props => {
   const layout = useContext(LayoutContext);
 
-  const NavItems = routeLinks.map(routeLink => (
+  const navItems = routeLinks.map(routeLink => (
+    <NavigationItem key={routeLink.title} itemSettings={routeLink} />
+  ));
+  const navItemsMobile = routeLinks.map(routeLink => (
     <NavigationItem
-      mobile={layout.openSidenav}
+      mobile={true}
       key={routeLink.title}
       itemSettings={routeLink}
     />
@@ -24,9 +27,8 @@ const Navigation = props => {
     exitActive: classes["background--exit-active"]
   };
   const navAnimationClasses = {
-    enter: classes["mobile-nav--enter"],
-    enterActive: classes["mobile-nav--enter-active"],
-    enterDone: classes["mobile-nav--enter-active"],
+    enterActive: classes["mobile-nav--enter-done"],
+    enterDone: classes["mobile-nav--enter-done"],
     exit: classes["mobile-nav--exit"],
     exitActive: classes["mobile-nav--exit-active"]
   };
@@ -50,11 +52,10 @@ const Navigation = props => {
         in={layout.openSidenav}
         classNames={navAnimationClasses}
       >
-        <nav className={classes["mobile-nav"]}>{NavItems}</nav>
+        <nav className={classes["mobile-nav"]}>{navItemsMobile}</nav>
       </CSSTransition>
-      
 
-      {!layout.openSidenav && <nav className={classes.sidenav}>{NavItems}</nav>}
+      {!layout.openSidenav && <nav className={classes.sidenav}>{navItems}</nav>}
     </React.Fragment>
   );
 };
