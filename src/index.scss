@@ -6,9 +6,11 @@
   padding: 0;
   box-sizing: inherit;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
   font-family: "Lato", "sans-serif";
   font-weight: 400;
@@ -18,17 +20,15 @@ body {
 }
 
 @media (max-width: 600px){
+
   html {
     font-size: 6px;
   }
+
+  p.content, li.content {
+    font-size: 12px;
+  }
+
 }
- 
-.col {
-  display: flex;
-  flex-direction: column;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-}
+
 

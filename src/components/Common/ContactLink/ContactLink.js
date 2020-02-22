@@ -12,7 +12,7 @@ const ContactLink = (props) => {
       </div>
       <div>
         <h2 className={classes['contact__heading']}>{props.title}</h2>
-        <p className={classes['contact__sub-title']}>{props.subTitle}</p>
+        <p className={[classes['contact__sub-title'], 'content'].join(' ')}>{props.subTitle}</p>
       </div>
     </a>
   );

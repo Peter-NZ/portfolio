@@ -32,7 +32,7 @@ const Skills = () => {
     const skillClasses = skill.emphasis ? [classes["skill-hexagon"], classes["emphasis"]].join(" ") : classes["skill-hexagon"];
     return (
       <div key={skill.name} style={{ gridArea: gridPos }} className={skillClasses}>
-        <span>{skill.name}</span>
+        <span className='content'>{skill.name}</span>
       </div>
     );
   });

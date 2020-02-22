@@ -4,7 +4,7 @@ import classes from "./LargeCard.module.scss";
 
 const LargeCard = props => {
   const bottomListItems = props.bottomListItems.map(listItem => (
-    <li key={listItem.label} className={classes["card__list-item"]}>
+    <li key={listItem.label} className={[classes["card__list-item"], 'content'].join(' ')}>
       <div
         className={classes["card__hexagon"]}
         style={{ backgroundColor: listItem.color }}
@@ -24,7 +24,7 @@ const LargeCard = props => {
       </div>
       <div className={classes["card__content"]}>
         <h2 className={classes["card__title"]}>{props.title}</h2>
-        <p className={classes["card__text"]}>{props.text}</p>
+        <p className={[classes["card__text"], 'content'].join(' ')}>{props.text}</p>
       </div>
       <div className={classes["card__bottom"]}>
         <div style={props.backgroundImage} className={classes["card__background"]}></div>

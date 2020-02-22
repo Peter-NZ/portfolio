@@ -16,7 +16,7 @@ const LinkCard = props => {
         </div>
       </div>
       <h2 className={classes["card__title"]}>{props.title}</h2>
-      <p className={classes["card__text"]}>{props.subTitle}</p>
+      <p className={[classes["card__text"], 'content'].join(' ')}>{props.subTitle}</p>
     </Link>
   );
 };

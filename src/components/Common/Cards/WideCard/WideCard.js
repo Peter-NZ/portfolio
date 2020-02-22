@@ -17,7 +17,7 @@ const WideCard = props => {
       </div>
       <div className={classes["card__content"]}>
         <h2 className={classes["card__title"]}>{props.title}</h2>
-        <p className={classes["card__text"]}>{props.text}</p>
+        <p className={[classes["card__text"], 'content'].join(' ')}>{props.text}</p>
       </div>
     </section>
   );

@@ -11,10 +11,6 @@ const Home = () => {
     {
       text: "GitHub",
       href: "https://github.com/Peter-NZ"
-    },
-    {
-      text: "MySpace",
-      href: "#"
     }
   ];
   const linkCardProps = [
