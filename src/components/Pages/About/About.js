@@ -15,8 +15,16 @@ const About = () => {
     {
       title: "What I do",
       icon: "laptop",
-      text:
-        <span>My <a href='test'>current</a> role consists primarily of creating and maintaining complex front end web applications, usually in Angular 7/8, for both production and as prototypes to present to clients. I also spend time mentoring and assisting others at DXC Technology who wish to learn front end web development and often participate in client workshops to assist in their digital transformations.</span>,
+      text: (
+        <span>
+          My current role consists primarily of creating and maintaining complex
+          front end web applications, usually in Angular 7/8, for both
+          production and as prototypes to present to clients. I also spend time
+          mentoring and assisting others at DXC Technology who wish to learn
+          front end web development and often participate in client workshops to
+          assist in their digital transformations.
+        </span>
+      ),
       backgroundImage: sideBackgroundGradient
     },
     {
@@ -32,7 +40,9 @@ const About = () => {
       title={wideCard.title}
       icon={wideCard.icon}
       backgroundImage={wideCard.backgroundImage}
-    >{wideCard.text}</WideCard>
+    >
+      {wideCard.text}
+    </WideCard>
   ));
 
   return (
