@@ -24,7 +24,7 @@ const LargeCard = props => {
       </div>
       <div className={classes["card__content"]}>
         <h2 className={classes["card__title"]}>{props.title}</h2>
-        <p className={[classes["card__text"], 'content'].join(' ')}>{props.text}</p>
+        <p className={[classes["card__text"], 'content'].join(' ')}>{props.children}</p>
       </div>
       <div className={classes["card__bottom"]}>
         <div style={props.backgroundImage} className={classes["card__background"]}></div>
@@ -38,7 +38,6 @@ export default LargeCard;
 
 LargeCard.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   backgroundImage: PropTypes.string,
   bottomListItems: PropTypes.arrayOf(

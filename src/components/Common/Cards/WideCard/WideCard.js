@@ -17,7 +17,7 @@ const WideCard = props => {
       </div>
       <div className={classes["card__content"]}>
         <h2 className={classes["card__title"]}>{props.title}</h2>
-        <p className={[classes["card__text"], 'content'].join(' ')}>{props.text}</p>
+        <p className={[classes["card__text"], 'content'].join(' ')}>{props.children}</p>
       </div>
     </section>
   );
@@ -27,7 +27,6 @@ export default WideCard;
 
 WideCard.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   backgroundImage: PropTypes.string
 };

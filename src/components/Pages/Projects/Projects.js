@@ -38,10 +38,9 @@ const Projects = () => {
       key={projectCard.title}
       title={projectCard.title}
       icon={projectCard.icon}
-      text={projectCard.text}
       backgroundImage={projectCard.backgroundImage}
       bottomListItems={projectCard.bottomListItems}
-    ></LargeCard>
+    >{projectCard.text}</LargeCard>
   ));
   return (
     <React.Fragment>
