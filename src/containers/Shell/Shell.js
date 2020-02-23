@@ -22,9 +22,9 @@ export default class Shell extends Component {
                 }}>
                     <Navigation/>
                 </LayoutContext.Provider>
-                <div className={classes['center-wrapper']}>
+                <main className={classes['center-wrapper']}>
                     <Routes/>
-                </div>
+                </main>
                 <Backdrop/>
             </React.Fragment>
         )
