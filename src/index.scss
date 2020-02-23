@@ -19,6 +19,17 @@ body {
   box-sizing: border-box;
 }
 
+.card-link {
+  color: #003d4a;
+  transition: .2s ease-in;
+  &:visited {
+    color: #003d4a
+  }
+  &:hover {
+    opacity: .5;
+  }
+}
+
 @media (max-width: 600px){
 
   html {
