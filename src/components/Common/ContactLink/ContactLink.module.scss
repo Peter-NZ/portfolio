@@ -2,7 +2,6 @@
 
 .contact {
     color: rgba(255, 255, 255, .8);
-    width: 30rem;
     height: 10rem;
     display: flex;
     flex-direction: row;
@@ -10,6 +9,7 @@
     margin-top: 2rem;
     transition: all 0.2s;
     text-decoration: none;
+    padding: 0 2rem;
     @include moveUpChildren(2);
     &__circle {
         @include iconCircle(7);

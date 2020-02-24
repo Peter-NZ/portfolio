@@ -4,17 +4,13 @@
     margin-top: 1.5rem;
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
     max-width: 120rem;
     position: relative;
     min-height: 27rem;
+    margin-left: -2rem;
     @include moveUpChildren(4);
 }
 
-@media(max-width:400px){
-    .cards{
-      width: 100%;
-    }
-}

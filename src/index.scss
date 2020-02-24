@@ -30,13 +30,20 @@ body {
   }
 }
 
+@media (max-width: 1024px){
+
+  html {
+    font-size: 8px;
+  }
+}
+
 @media (max-width: 600px){
 
   html {
     font-size: 6px;
   }
 
-  p.content, li.content {
+  p.content, li.content, .content {
     font-size: 12px;
   }
 

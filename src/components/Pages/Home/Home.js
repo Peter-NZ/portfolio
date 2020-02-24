@@ -32,7 +32,7 @@ const Home = () => {
       title: "My Work",
       link: "/projects",
       icon: "trending_up",
-      subTitle: "Some of the projects I've worked on",
+      subTitle: "Some projects I've worked on",
       backgroundImage: "linear-gradient(to bottom right, #30cfd0, #3c1053)"
     },
     {
