@@ -9,7 +9,14 @@ const About = () => {
     {
       title: "Overview",
       icon: "perm_identity",
-      text: "A few works about me",
+      text: (
+        <span>
+          I am a client facing software developer with a focus on front end web
+          development, based in Wellington New Zealand. In my spare time I enjoy
+          building cool things(like this website), playing the odd video game
+          and getting out and about in the city.
+        </span>
+      ),
       backgroundImage: sideBackgroundGradient
     },
     {
@@ -30,7 +37,15 @@ const About = () => {
     {
       title: "Education",
       icon: "school",
-      text: "Some of the projects I've worked on",
+      text: (
+        <span>
+          I have a bachelor's degree in Computer Science from the University of
+          Canterbury(2015 - 2018). Outside of formal education and training in
+          the workplace I take a variety of courses on online platforms around
+          front end development in order to expand my skills as well as putting
+          these skills into practice with personal projects.
+        </span>
+      ),
       backgroundImage: sideBackgroundGradient
     }
   ];
