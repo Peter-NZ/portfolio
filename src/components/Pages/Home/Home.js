@@ -22,18 +22,18 @@ const Home = () => {
       backgroundImage: "linear-gradient(to bottom right, #30cfd0, #5b397d)"
     },
     {
-      title: "Skills",
-      link: "/skills",
-      icon: "whatshot",
-      subTitle: "A selection of my technical skills",
-      backgroundImage: "linear-gradient(to bottom left, #30cfd0, #330867)"
-    },
-    {
       title: "My Work",
       link: "/projects",
       icon: "trending_up",
       subTitle: "Some projects I've worked on",
       backgroundImage: "linear-gradient(to bottom right, #30cfd0, #3c1053)"
+    },
+    {
+      title: "Skills",
+      link: "/skills",
+      icon: "whatshot",
+      subTitle: "A selection of my technical skills",
+      backgroundImage: "linear-gradient(to bottom left, #30cfd0, #330867)"
     },
     {
       title: "Contact Me",

@@ -30,7 +30,7 @@ const Contact = () => {
     <React.Fragment>
       <Cockpit
         title="Contact Me"
-        label="Feel free to drop me a line on any of the bellow channels"
+        label="Feel free to drop me a line on any of the below channels"
       ></Cockpit>
       <div className={classes.links}>{contactLinks}</div>
     </React.Fragment>

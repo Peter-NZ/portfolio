@@ -14,7 +14,7 @@ const About = () => {
           I am a client facing software developer at DXC Technology with a focus
           on front end web development, based in Wellington New Zealand. In my
           spare time I enjoy building cool things (like this website), playing
-          the odd video game and getting out and about in the city.
+          the odd video game, going to the gym and getting out and about in the city.
         </span>
       ),
       backgroundImage: sideBackgroundGradient
@@ -25,7 +25,7 @@ const About = () => {
       text: (
         <span>
           My current role consists primarily of creating and maintaining complex
-          front end web applications, usually in Angular 7/8, for both
+          front end web applications, usually in Angular 7+, for both
           production and as prototypes to present to clients. I also spend time
           mentoring and assisting others at DXC Technology who wish to learn
           front end web development and often participate in client workshops to
