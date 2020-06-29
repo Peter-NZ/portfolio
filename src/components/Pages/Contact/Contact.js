@@ -2,22 +2,9 @@ import React from "react";
 import Cockpit from "../../Common/Cockpit/Cockpit";
 import ContactLink from "../../Common/ContactLink/ContactLink";
 import classes from "./Contact.module.scss";
+import { contactLinkProps } from "./ContactContent";
 const Contact = () => {
-  const contactLinkProps = [
-    {
-      href: "mailto:me@peterdavidson.dev",
-      title: "Email",
-      subTitle: "me@peterdavidson.dev",
-      icon: "mail_outline"
-    },
-    {
-      href: "https://www.linkedin.com/in/peteramdavidson",
-      title: "Linked In",
-      subTitle: "Peter Davidson",
-      icon: "perm_identity"
-    }
-  ];
-  const contactLinks = contactLinkProps.map(link => (
+  const contactLinks = contactLinkProps.map((link) => (
     <ContactLink
       key={link.title}
       title={link.title}
