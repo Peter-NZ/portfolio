@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { routeLinks } from "../../Routes";
+import { routeContext } from "../../context/RouteContext";
 import NavigationItem from "./NavigationItem/NavigationItem";
 import classes from "./Navigation.module.scss";
 import NavigationButton from "./NavigationButton/NavigationButton";
@@ -8,11 +8,11 @@ import { CSSTransition } from "react-transition-group";
 
 const Navigation = props => {
   const layout = useContext(LayoutContext);
-
-  const navItems = routeLinks.map(routeLink => (
+  const routes = useContext(routeContext)
+  const navItems = routes.routeLinks.map(routeLink => (
     <NavigationItem key={routeLink.title} itemSettings={routeLink} />
   ));
-  const navItemsMobile = routeLinks.map(routeLink => (
+  const navItemsMobile = routes.routeLinks.map(routeLink => (
     <NavigationItem
       mobile={true}
       key={routeLink.title}
