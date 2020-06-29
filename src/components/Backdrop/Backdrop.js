@@ -70,7 +70,7 @@ export default class Backdrop extends Component {
         ? this.getRandint(1, 600)
         : this.getRandint(1, this.ctx.canvas.width);
     const y = 1;
-    this.getRandint(0, 800) < 5 &&
+    this.getRandint(0, 400) < 5 &&
       this.meteors.push(new Meteor(4000, 3, "rgb(0,100,100", x, y, this.ctx));
 
     this.stars.forEach(star => {
