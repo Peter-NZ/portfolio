@@ -9,6 +9,7 @@ export default class Backdrop extends Component {
     this.ctx = null;
     this.stars = [];
     this.meteors = [];
+    this.meteorResetCount = 0;
   }
 
   componentDidMount = () => {
@@ -70,8 +71,12 @@ export default class Backdrop extends Component {
         ? this.getRandint(1, 600)
         : this.getRandint(1, this.ctx.canvas.width);
     const y = 1;
-    this.getRandint(0, 400) < 5 &&
+    this.meteorResetCount++;
+    console.log(this.meteorResetCount);
+    if(this.meteorResetCount > 1000 || (this.getRandint(0, 200) < 5 && this.meteorResetCount > 100)){
+      this.meteorResetCount = 0;
       this.meteors.push(new Meteor(4000, 3, "rgb(0,100,100", x, y, this.ctx));
+    }
 
     this.stars.forEach(star => {
       star.draw();
