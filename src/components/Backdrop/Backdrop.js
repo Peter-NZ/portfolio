@@ -19,7 +19,6 @@ export default class Backdrop extends Component {
   updateCanvasDimensions = () => {
     this.ctx.canvas.width = window.innerWidth;
     this.ctx.canvas.height = window.innerHeight;
-    console.log("resizing");
   };
 
   setupCanvas = () => {

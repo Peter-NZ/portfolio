@@ -6,7 +6,7 @@ import classes from "./Projects.module.scss";
 const Projects = () => {
   const projectCardProps = [
     {
-      title: "Unnamed INZ Project",
+      title: "INZ Request Processing System",
       icon: "flight_takeoff",
       text: (
         <span>

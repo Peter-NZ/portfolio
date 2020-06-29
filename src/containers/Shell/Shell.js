@@ -10,7 +10,6 @@ export default class Shell extends Component {
     }
     toggleSidenav = ()=>{
         this.setState(prevState=>({openSidenav: !prevState.openSidenav}));
-        console.log(this.state.openSidenav);
     }
     render() {
         return (
