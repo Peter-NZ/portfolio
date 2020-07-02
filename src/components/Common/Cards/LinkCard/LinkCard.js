@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./LinkCard.module.scss";
 import PropTypes from "prop-types";
-const LinkCard = props => {
-  const topBackground = {
-    backgroundImage: props.backgroundImage
-  };
+const LinkCard = (props) => {
   return (
     <Link to={props.link} className={classes.card}>
-      <div style={topBackground} className={classes["card__top"]}>
+      <div
+        style={{ backgroundImage: props.backgroundImage }}
+        className={classes["card__top"]}
+      >
         <div className={classes["card__circle"]}>
           <i className={`${classes["card__icon"]} material-icons`}>
             {props.icon}
@@ -16,7 +16,9 @@ const LinkCard = props => {
         </div>
       </div>
       <h2 className={classes["card__title"]}>{props.title}</h2>
-      <p className={[classes["card__text"], 'content'].join(' ')}>{props.subTitle}</p>
+      <p className={[classes["card__text"], "content"].join(" ")}>
+        {props.subTitle}
+      </p>
     </Link>
   );
 };
@@ -28,5 +30,5 @@ LinkCard.propTypes = {
   subTitle: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  backgroundImage: PropTypes.string
+  backgroundImage: PropTypes.string,
 };
