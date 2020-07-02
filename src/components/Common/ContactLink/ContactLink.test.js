@@ -27,7 +27,7 @@ afterEach(() => {
   container = null;
 });
 
-describe("WideCard Rendering", () => {
+describe("ContactLink Rendering", () => {
   it("should compile", () => {
     expect(container).toBeTruthy();
   });

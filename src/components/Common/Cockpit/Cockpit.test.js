@@ -30,7 +30,7 @@ afterEach(() => {
   container = null;
 });
 
-describe("WideCard Rendering", () => {
+describe("Cockpit Rendering", () => {
   it("should compile", () => {
     expect(container).toBeTruthy();
   });
