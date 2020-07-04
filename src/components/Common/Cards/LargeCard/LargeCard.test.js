@@ -55,7 +55,6 @@ describe("LargeCard Rendering", () => {
     const hexagons = container.querySelectorAll('.card__hexagon');
     const hexagon1Styles = hexagons[0].style;
     const hexagonItem2Styles = hexagons[1].style;
-    console.log(hexagon1Styles);
     expect(hexagons.length).toBe(2);
     expect(hexagon1Styles).toContain("background-color");
     expect(hexagonItem2Styles).toContain("background-color");

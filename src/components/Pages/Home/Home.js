@@ -42,7 +42,7 @@ const Home = () => {
       key={linkCard.title}
       title={linkCard.title}
       icon={linkCard.icon}
-      link={linkCard.link}
+      link={linkCard.link || ''}
       subTitle={linkCard.subTitle}
       backgroundImage={linkCard.backgroundImage}
     ></LinkCard>

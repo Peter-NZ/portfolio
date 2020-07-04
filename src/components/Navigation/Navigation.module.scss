@@ -176,12 +176,14 @@
         transition: .4s ease;
     }
 }
-
+#test {
+    background-color: pink;
+}
 @media (max-width: 769px){
     .sidenav {
-        transform: translateX(-80rem);
+        display: none;
     }
-    .toggle-button{
+    .toggle-button {
         display:block;
         opacity: 1;
     }

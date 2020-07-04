@@ -6,7 +6,7 @@ import NavigationButton from "./NavigationButton/NavigationButton";
 import LayoutContext from "../../context/LayoutContext";
 import { CSSTransition } from "react-transition-group";
 
-const Navigation = props => {
+const Navigation = () => {
   const layout = useContext(LayoutContext);
   const routes = useContext(routeContext)
   const navItems = routes.routeLinks.map(routeLink => (
