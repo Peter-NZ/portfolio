@@ -3,6 +3,7 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act, Simulate } from "react-dom/test-utils";
 import Navigation from "./Navigation";
 import { BrowserRouter } from "react-router-dom";
+import LayoutContext from "../../context/LayoutContext";
 
 let container = null;
 
@@ -17,8 +18,8 @@ afterEach(() => {
   container = null;
 });
 
-describe("Navigation Desktop", () => {
-  beforeEach(() => {
+describe("Navigation Rendering", () => {
+  it("should compile", () => {
     act(() => {
       render(
         <BrowserRouter>
@@ -27,65 +28,43 @@ describe("Navigation Desktop", () => {
         container
       );
     });
-  });
-  it("should compile", () => {
     expect(container).toBeTruthy();
   });
-  it("should show desktop sidenav", () => {
-    const sidenavEl = container.querySelector(".sidenav");
-    expect(getComputedStyle(sidenavEl).getPropertyValue("display")).toBe(
-      "block"
-    );
-  });
-  it("should hide toggle button", () => {
-    const toggleButtonEl = container.querySelector(".toggle-button");
-    console.log(document);
-
-    expect(getComputedStyle(toggleButtonEl).getPropertyValue("display")).toBe(
-      "none"
-    );
-    expect(getComputedStyle(toggleButtonEl).getPropertyValue("display")).toBe(
-      "0"
-    );
-  });
-});
-
-describe("Navigation Mobile", () => {
-  beforeEach(() => {
+  it("should show mobile menu and background if openSidenav true", () => {
     act(() => {
       render(
-        <BrowserRouter>
-          <Navigation></Navigation>
-        </BrowserRouter>,
+        <LayoutContext.Provider
+          value={{ toggleSidenav: () => {}, openSidenav: true }}
+        >
+          <BrowserRouter>
+            <Navigation></Navigation>
+          </BrowserRouter>
+        </LayoutContext.Provider>,
         container
       );
-      window.innerHeight = 700;
-      window.innerWidth = 375;
-      window.dispatchEvent(new Event("resize"));
     });
-  });
+    const mobileNavEl = container.querySelector(".mobile-nav");
+    const mobileBackgroundEl = container.querySelector(".background");
 
-  it("should hide desktop sidenav", () => {
-    const sidenavEl = container.querySelector(".sidenav");
-    expect(getComputedStyle(sidenavEl).getPropertyValue("display")).toBe(
-      "none"
-    );
-  });
-
-  it("should show toggle button", () => {
-    const toggleButtonEl = container.querySelector(".toggle-button");
-    //expect(getComputedStyle(toggleButtonEl).getPropertyValue('display')).toBe("block");
-    expect(toggleButtonEl).toHaveStyle(`display: 'block'`);
-    //expect(getComputedStyle(toggleButtonEl).getPropertyValue('opacity')).toBe("1");
-  });
-
-  it("should show mobile nav on button press", () => {
-    const toggleButtonEl = container.querySelector(".toggle-button");
-    let mobileNavEl;
-    act(() => {
-      Simulate.click(toggleButtonEl);
-    });
-    mobileNavEl = container.querySelector(".mobile-nav");
     expect(mobileNavEl).toBeTruthy();
+    expect(mobileBackgroundEl).toBeTruthy();
+  });
+  it("should hide mobile menu and background if openSidenav false", () => {
+    render(
+      <LayoutContext.Provider
+        value={{ toggleSidenav: () => {}, openSidenav: false }}
+      >
+        <BrowserRouter>
+          <Navigation></Navigation>
+        </BrowserRouter>
+      </LayoutContext.Provider>,
+      container
+    );
+
+    const mobileNavEl = container.querySelector(".mobile-nav");
+    const mobileBackgroundEl = container.querySelector(".background");
+
+    expect(mobileNavEl).toBeFalsy();
+    expect(mobileBackgroundEl).toBeFalsy();
   });
 });

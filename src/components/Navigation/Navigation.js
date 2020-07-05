@@ -8,11 +8,11 @@ import { CSSTransition } from "react-transition-group";
 
 const Navigation = () => {
   const layout = useContext(LayoutContext);
-  const routes = useContext(routeContext)
-  const navItems = routes.routeLinks.map(routeLink => (
+  const routes = useContext(routeContext);
+  const navItems = routes.routeLinks.map((routeLink) => (
     <NavigationItem key={routeLink.title} itemSettings={routeLink} />
   ));
-  const navItemsMobile = routes.routeLinks.map(routeLink => (
+  const navItemsMobile = routes.routeLinks.map((routeLink) => (
     <NavigationItem
       mobile={true}
       key={routeLink.title}
@@ -25,13 +25,13 @@ const Navigation = () => {
     enterActive: classes["background--enter-active"],
     enterDone: classes["background--enter-active"],
     exit: classes["background--exit"],
-    exitActive: classes["background--exit-active"]
+    exitActive: classes["background--exit-active"],
   };
   const navAnimationClasses = {
     enterActive: classes["mobile-nav--enter-done"],
     enterDone: classes["mobile-nav--enter-done"],
     exit: classes["mobile-nav--exit"],
-    exitActive: classes["mobile-nav--exit-active"]
+    exitActive: classes["mobile-nav--exit-active"],
   };
   return (
     <React.Fragment>
@@ -43,10 +43,7 @@ const Navigation = () => {
       >
         <div className={classes["background"]}></div>
       </CSSTransition>
-      <NavigationButton
-        open={layout.openSidenav}
-        toggleSidenav={layout.toggleSidenav}
-      />
+      <NavigationButton toggleSidenav={layout.toggleSidenav} />
       <CSSTransition
         unmountOnExit
         timeout={400}
@@ -55,8 +52,7 @@ const Navigation = () => {
       >
         <nav className={classes["mobile-nav"]}>{navItemsMobile}</nav>
       </CSSTransition>
-
-      {!layout.openSidenav && <nav className={classes.sidenav}>{navItems}</nav>}
+      <nav className={classes.sidenav}>{navItems}</nav>
     </React.Fragment>
   );
 };
