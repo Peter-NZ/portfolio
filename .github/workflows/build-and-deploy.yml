@@ -32,9 +32,9 @@ jobs:
       run: npm run build
     - name: Upload build artifacts
       uses: actions/upload-artifact@master
-        with:
-          name: build
-          path: build
+      with:
+        name: build
+        path: build
   firebase-deploy:
     name: Deploy
     needs: test-and-build
@@ -45,8 +45,8 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: dist
-          path: dist
+          name: build
+          path: build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
