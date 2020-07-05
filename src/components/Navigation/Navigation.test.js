@@ -18,7 +18,7 @@ afterEach(() => {
   container = null;
 });
 
-describe("Navigation Rendering", () => {
+describe("Navigation Menus", () => {
   it("should compile", () => {
     act(() => {
       render(
@@ -66,5 +66,23 @@ describe("Navigation Rendering", () => {
 
     expect(mobileNavEl).toBeFalsy();
     expect(mobileBackgroundEl).toBeFalsy();
+  });
+  it("should call toggleSidenav on button click", () => {
+    const mockToggleSidenav = jasmine.createSpy("mockToggleSidenav");
+    act(() => {
+      render(
+        <LayoutContext.Provider
+          value={{ toggleSidenav: mockToggleSidenav, openSidenav: true }}
+        >
+          <BrowserRouter>
+            <Navigation></Navigation>
+          </BrowserRouter>
+        </LayoutContext.Provider>,
+        container
+      );
+    });
+    const buttonEl = container.querySelector(".toggle-button");
+    Simulate.click(buttonEl);
+    expect(mockToggleSidenav).toHaveBeenCalled();
   });
 });
