@@ -6,7 +6,7 @@ export  const skillProps = [
     { name: "React", emphasis: true },
     { name: "Git", emphasis: true },
     { name: "Stylus", emphasis: true },
-    { name: "Angular CLI", emphasis: true },
+    { name: "Jasmine", emphasis: true },
     { name: "RxJS", emphasis: true },
     { name: "Angular Material", emphasis: false },
     { name: "SCSS", emphasis: false },
