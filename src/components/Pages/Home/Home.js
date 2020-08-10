@@ -31,7 +31,7 @@ const Home = () => {
     },
     {
       title: "Contact Me",
-      link: context.routePaths.contacts,
+      link: context.routePaths.contact,
       icon: "mail_outline",
       subTitle: "Where you can drop me a line",
       backgroundImage: "linear-gradient(to bottom left, #30cfd0, #762b8f)",
