@@ -1,5 +1,9 @@
 @import "css/animations.scss";
 @import "css/mixins.scss";
+@import "css/typography";
+@import "css/utilities";
+@import "css/variables";
+@import "css/components";
 
 *, *::after, *::before {
   margin: 0;
@@ -9,6 +13,16 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  @include respond(tab-land) { 
+      font-size: 56.25%; 
+  }
+  @include respond(tab-port) { 
+      font-size: 50%; 
+  }
+  @include respond(big-desktop) {
+      font-size: 75%; 
+  }
 }
 
 body {
@@ -17,6 +31,7 @@ body {
   line-height: 1.5;
   color: #f5f3f1;
   box-sizing: border-box;
+  font-size: $default-font-size;
 }
 
 .card-link {
@@ -30,23 +45,5 @@ body {
   }
 }
 
-@media (max-width: 1024px){
-
-  html {
-    font-size: 8px;
-  }
-}
-
-@media (max-width: 600px){
-
-  html {
-    font-size: 6px;
-  }
-
-  p.content, li.content, .content {
-    font-size: 12px;
-  }
-
-}
 
 

@@ -1,0 +1,34 @@
+@import "./variables";
+
+.btn {
+    &--round {
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-size: 2rem;   
+        display: block;
+    }
+    &--link {
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+    }
+    &--primary {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        &:hover {
+            color: $color-secondary-light;
+            background-color: $color-secondary-dark;
+        }
+    }
+    &--secondary {
+        border: $color-primary-light 2px solid;
+        color: $color-white;
+        &:hover {
+            color: $color-white;
+            border: $color-primary-dark 2px solid;
+        }
+    }
+    &--icon {
+        display: inline-flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../../css/mixins.scss";
+
+.hero {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    &__buttons {
+        display: flex;
+        margin-top: 3rem;
+    }
+}
