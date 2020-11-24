@@ -44,6 +44,9 @@ body {
     opacity: .5;
   }
 }
-
-
-
+.wf-loading .material-icons {
+  visibility: hidden;
+  max-width: 24px;
+  max-height: 24px;
+  display: block;
+}

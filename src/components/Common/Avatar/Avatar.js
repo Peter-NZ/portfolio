@@ -28,8 +28,8 @@ const Avatar = () => {
       <SvgMorph fill={"url(#gradient)"} interpolators={interpolators}>
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#003e4b"></stop>
-            <stop offset="100%" stop-color="#000000"></stop>
+            <stop offset="0%" stopColor=" rgba(0, 62, 75, .5)"></stop>
+            <stop offset="100%" stopColor="rgba(0,0,0,.5)"></stop>
           </linearGradient>
         </defs>
       </SvgMorph>

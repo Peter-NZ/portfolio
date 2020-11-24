@@ -14,6 +14,7 @@
     &--primary {
         background-color: $color-primary-dark;
         color: $color-white;
+        border: $color-primary-dark 2px solid;
         &:hover {
             color: $color-secondary-light;
             background-color: $color-secondary-dark;
