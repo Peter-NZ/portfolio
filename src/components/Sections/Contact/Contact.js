@@ -14,14 +14,13 @@ const Contact = () => {
     ></ContactLink>
   ));
   return (
-    <React.Fragment>
+    <div class="section">
       <Cockpit
         title="Contact Me"
         label="Feel free to drop me a line on any of the below channels"
       ></Cockpit>
       <div className={classes.links}>{contactLinks}</div>
-    </React.Fragment>
-  );
+</div>  );
 };
 
 export default Contact;

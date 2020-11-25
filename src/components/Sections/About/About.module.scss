@@ -2,10 +2,8 @@
 
 .cards {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 60%;
     flex-wrap: wrap;
+    padding-top:5rem;
     @include moveUpChildren(3);
 }
 

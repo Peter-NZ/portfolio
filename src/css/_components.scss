@@ -33,3 +33,14 @@
         align-items: center;
     }
 }
+
+.section {
+    max-width: 1225px;
+    width: 100%;
+    margin-top: 10rem;
+    padding-left: 2rem;
+    &__content {
+        padding-left: 5rem;
+        margin-top: 5rem;
+    }
+}

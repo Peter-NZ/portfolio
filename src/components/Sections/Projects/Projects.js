@@ -1,11 +1,10 @@
 import React from "react";
-import Cockpit from "../../Common/Cockpit/Cockpit";
 import LargeCard from "../../Common/Cards/LargeCard/LargeCard";
 import classes from "./Projects.module.scss";
-import {projectCardContent} from './ProjectsContent';
+import { projectCardContent } from "./ProjectsContent";
 
 const Projects = () => {
-  const projectCards = projectCardContent.map(projectCard => (
+  const projectCards = projectCardContent.map((projectCard) => (
     <LargeCard
       key={projectCard.title}
       title={projectCard.title}
@@ -17,13 +16,12 @@ const Projects = () => {
     </LargeCard>
   ));
   return (
-    <React.Fragment>
-      <Cockpit
-        title="My Work"
-        label="Some of the projects I have worked on professionally and in my spare time"
-      ></Cockpit>
-      <div className={classes.cards}>{projectCards}</div>
-    </React.Fragment>
+    <div class="section">
+      <div className="section__content">
+        <h2 className="heading-secondary">My Work</h2>
+        <div className={classes.cards}>{projectCards}</div>
+      </div>
+    </div>
   );
 };
 

@@ -29,13 +29,13 @@ const Skills = () => {
   });
 
   return (
-    <React.Fragment>
+    <div class="section">
       <Cockpit
         title="Technical Skills"
         label="Some of the technical skills I've picked up in my time as a developer"
       ></Cockpit>
       <div className={classes.skills}>{skills}</div>
-    </React.Fragment>
+    </div>
   );
 };
 

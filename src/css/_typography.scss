@@ -1,4 +1,5 @@
 
+@import "./variables";
 .title-primary {
     font-family: 'Montserrat', sans-serif;
     &--main {
@@ -17,4 +18,40 @@
         display: block;
         letter-spacing: 4px;
     }
+}
+
+
+.heading-secondary {
+    font-weight: 400;
+    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.body-content {
+    font-size: 1.8rem;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8;
+    color: $color-body-text;
+}
+
+.heading-tertiary {
+    font-weight: 400;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    position: relative; 
+    &--sub {
+        font-size: 2.4rem;
+        font-weight: 400;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+}
+
+.icon {
+    &--large{
+        font-size: 48px !important;
+        height: 48px;
+        width: 48px;
+        color: $color-white;
+    }  
 }

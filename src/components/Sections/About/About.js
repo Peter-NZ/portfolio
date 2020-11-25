@@ -3,24 +3,22 @@ import Cockpit from "../../Common/Cockpit/Cockpit";
 import WideCard from "../../Common/Cards/WideCard/WideCard";
 import classes from "./About.module.scss";
 import { wideCardProps } from "./AboutContent";
+import ContentCard from "../../Common/Cards/ContentCard/ContentCard";
 
 const About = () => {
-  const wideCards = wideCardProps.map((wideCard) => (
-    <WideCard
-      key={wideCard.title}
-      title={wideCard.title}
-      icon={wideCard.icon}
-      backgroundImage={wideCard.backgroundImage}
-    >
-      {wideCard.text}
-    </WideCard>
+  const cards = wideCardProps.map((card) => (
+    <ContentCard key={card.title} title={card.title} icon={card.icon}>
+      {card.text}
+    </ContentCard>
   ));
 
   return (
-    <React.Fragment>
-      <Cockpit title="About Me"></Cockpit>
-      <div className={classes.cards}>{wideCards}</div>
-    </React.Fragment>
+    <div class="section">
+      <div className="section__content">
+        <h2 className="heading-secondary">About Me</h2>
+        <div className={classes.cards}>{cards}</div>
+      </div>
+    </div>
   );
 };
 

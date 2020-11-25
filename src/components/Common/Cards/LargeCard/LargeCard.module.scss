@@ -10,7 +10,9 @@ $card-gradient: linear-gradient(45deg, rgba(79, 79, 79, 0.03) 0%, rgba(79, 79, 7
     border-radius: 0.5rem;
     background-color: rgba(243,243,243,0.9);
     box-shadow: 0 1.5rem 2rem rgba(0,0,0,0.2), 0 2rem 5rem rgba(0,0,0,0.2);
-    margin-bottom: 4rem;
+    margin-right: 8rem;
+    margin-bottom: 8rem;
+    
     &__text {
         font-size: 1.6rem;
         padding: 1rem 1.5rem;
@@ -64,7 +66,7 @@ $card-gradient: linear-gradient(45deg, rgba(79, 79, 79, 0.03) 0%, rgba(79, 79, 7
     }
     &__icon{
         color: #00343f;
-        font-size: 4rem;
+        font-size: 6rem;
     }
     &__list-items{
         display: flex;

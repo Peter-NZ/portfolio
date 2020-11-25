@@ -11,7 +11,7 @@ $color-black: #000;
 $color-bluegrey-dark: hsl(209, 61%, 16%);
 $color-bluegrey-light: hsl(209, 23%, 60%);
 
-$color-body-text: hsl(209, 34%, 30%);
+$color-body-text: $color-bluegrey-light;
 
 // fontks
 $default-font-size: 1.6rem;
