@@ -4,20 +4,23 @@ import About from "../About/About";
 import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import Contact from "../Contact/Contact";
+
 const Home = () => {
   return (
     <React.Fragment>
-      <Hero />
-      <div id="about">
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="about" className="section__wrapper section__wrapper--solid">
         <About />
       </div>
-      <div id="work">
+      <div id="work" className="section__wrapper">
         <Projects />
       </div>
-      <div id="skills">
+      <div id="skills" className="section__wrapper">
         <Skills />
       </div>
-      <div id="contact">
+      <div id="contact" className="section__wrapper">
         <Contact />
       </div>
     </React.Fragment>

@@ -13,12 +13,12 @@ const About = () => {
   ));
 
   return (
-    <div class="section">
+    <section className="section">
       <div className="section__content">
         <h2 className="heading-secondary">About Me</h2>
         <div className={classes.cards}>{cards}</div>
       </div>
-    </div>
+    </section>
   );
 };
 

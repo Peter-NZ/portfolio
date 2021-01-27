@@ -1,5 +1,4 @@
 import React from "react";
-import Cockpit from "../../Common/Cockpit/Cockpit";
 import ContactLink from "../../Common/ContactLink/ContactLink";
 import classes from "./Contact.module.scss";
 import { contactLinkProps } from "./ContactContent";
@@ -14,13 +13,12 @@ const Contact = () => {
     ></ContactLink>
   ));
   return (
-    <div class="section">
-      <Cockpit
-        title="Contact Me"
-        label="Feel free to drop me a line on any of the below channels"
-      ></Cockpit>
-      <div className={classes.links}>{contactLinks}</div>
-</div>  );
+    <section className="section">
+      <div className="section__content">
+        <h2 className="heading-secondary">Contact Me</h2>
+        <div className={classes.links}>{contactLinks}</div>
+      </div>
+</section>  );
 };
 
 export default Contact;

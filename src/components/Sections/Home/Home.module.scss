@@ -14,3 +14,8 @@
     @include moveUpChildren(4);
 }
 
+.solid {
+    background-color: #2d3e508f;
+    clip-path: polygon(0 8rem, 100% 0, 100% calc(100% - 8rem), 0 100%);
+}
+

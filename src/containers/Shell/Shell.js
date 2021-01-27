@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Routes from "../../Routes";
 import Backdrop from "../../components/Backdrop/Backdrop";
 import Navigation from "../../components/Navigation/Navigation";
 import classes from "./Shell.module.scss";
 import LayoutContext from "../../context/LayoutContext";
+import Home from "../../components/Sections/Home/Home";
 import {
   routeContext as RouteContext,
   initialRouteContext,
@@ -29,7 +29,7 @@ export default class Shell extends Component {
             <Navigation />
           </LayoutContext.Provider>
           <main className={classes["center-wrapper"]}>
-            <Routes />
+            <Home/>
           </main>
         </RouteContext.Provider>
         <Backdrop />

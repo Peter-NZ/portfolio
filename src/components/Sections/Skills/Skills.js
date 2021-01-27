@@ -30,11 +30,12 @@ const Skills = () => {
 
   return (
     <div class="section">
-      <Cockpit
-        title="Technical Skills"
-        label="Some of the technical skills I've picked up in my time as a developer"
-      ></Cockpit>
-      <div className={classes.skills}>{skills}</div>
+      <div className="section__content">
+        <h2 className="heading-secondary">Technical Skills</h2>
+        <div className="u-center">
+          <div className={classes.skills}>{skills}</div>
+        </div>
+      </div>
     </div>
   );
 };

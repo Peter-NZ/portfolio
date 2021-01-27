@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
 export const routePaths = {
-  home: "/",
-  about: "/about",
-  projects: "/projects",
-  skills: "/skills",
-  contact: "/contact",
+  home: "#home",
+  about: "#about",
+  projects: "#work",
+  skills: "#skills",
+  contact: "#contact",
 };
 
 export const initialRouteContext = {

@@ -35,12 +35,21 @@
 }
 
 .section {
-    max-width: 1225px;
+    max-width: calc(1225px + 9rem);
     width: 100%;
     margin-top: 10rem;
-    padding-left: 2rem;
+    padding: 0 9rem;
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding:  0 0 9rem 0;
+        &--solid {
+            background-color: #2d3e508f;
+            clip-path: polygon(0 8rem, 100% 0, 100% calc(100% - 8rem), 0 100%);
+        }
+    }
     &__content {
-        padding-left: 5rem;
         margin-top: 5rem;
     }
 }

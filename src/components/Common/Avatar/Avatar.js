@@ -10,21 +10,17 @@ const backgroundPaths = [
   "M421.5,318.5Q359,387,284,408.5Q209,430,126.5,389.5Q44,349,50,252.5Q56,156,127.5,92Q199,28,284,64.5Q369,101,426.5,175.5Q484,250,421.5,318.5Z",
   "M427,331.5Q380,413,288,450.5Q196,488,131.5,413Q67,338,73,252.5Q79,167,141.5,108Q204,49,296,63Q388,77,431,163.5Q474,250,427,331.5Z",
 ];
-const interpolators = [];
-for (let i = 0; i < backgroundPaths.length; i++) {
-  interpolators.push(
-    interpolate(
-      backgroundPaths[i],
-      backgroundPaths[i + 1] || backgroundPaths[0],
-      { maxSegmentLength: 10 }
-    )
-  );
-}
+
+const interpolators = backgroundPaths.map((path, index) =>
+  interpolate(path, backgroundPaths[index + 1] || backgroundPaths[0], {
+    maxSegmentLength: 10,
+  })
+);
 
 const Avatar = () => {
   return (
     <div className={classes.avatar}>
-      <img className={classes["avatar__img"]} src={peterImg} />
+      <img className={classes["avatar__img"]} alt="Peter Davidson" src={peterImg} />
       <SvgMorph fill={"url(#gradient)"} interpolators={interpolators}>
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">

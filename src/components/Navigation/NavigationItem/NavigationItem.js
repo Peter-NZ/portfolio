@@ -1,22 +1,19 @@
 import React from "react";
 import classes from "../Navigation.module.scss";
-import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const NavigationItem = props => {
   return (
-    <NavLink
-      exact
-      activeClassName={classes["sidenav__item--active"]}
+    <a
       className={props.mobile ? classes['sidenav__item--mobile']: classes['sidenav__item']}
-      to={props.itemSettings.path}
+      href={props.itemSettings.path}
       onClick={props.toggleSidenav}
     >
       <i className={`${props.mobile ? classes['sidenav__icon--mobile']: classes['sidenav__icon']} material-icons`}>
         {props.itemSettings.icon}
       </i>
       {props.itemSettings.title}
-    </NavLink>
+    </a>
   );
 };
 
