@@ -2,6 +2,9 @@ import React from "react";
 import ContactLink from "../../Common/ContactLink/ContactLink";
 import classes from "./Contact.module.scss";
 import { contactLinkProps } from "./ContactContent";
+import Divider from "../../Divider/Divider";
+
+
 const Contact = () => {
   const contactLinks = contactLinkProps.map((link) => (
     <ContactLink
@@ -15,7 +18,7 @@ const Contact = () => {
   return (
     <section className="section">
       <div className="section__content">
-        <h2 className="heading-secondary">Contact Me</h2>
+        <Divider>Contact Me</Divider>
         <div className={classes.links}>{contactLinks}</div>
       </div>
 </section>  );

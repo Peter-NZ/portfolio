@@ -1,0 +1,50 @@
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: .2rem;
+    flex: 1
+  }
+  
+  &::before {
+    background: linear-gradient(to right, rgba(240,240,240,0), #fff);
+    //background-color: white;
+  }
+  
+  &::after {
+    background: linear-gradient(to left, rgba(240,240,240,0), #fff);
+    //background-color: white;
+  } 
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 5rem;
+    width: 1.5rem;
+    
+  }
+  &::before {
+    margin-right: 2rem;
+    border-top: rgba(white, .7) .2rem solid;
+    border-bottom: rgba(white, .7) .2rem solid;
+    border-left: rgba(white, .7) .2rem solid;
+  }
+  
+  &::after {
+    margin-left: 2rem;
+    border-top: rgba(white, .7) .2rem solid;
+    border-bottom: rgba(white, .7) .2rem solid;
+    border-right: rgba(white, .7) .2rem solid;
+  } 
+}

@@ -4,6 +4,7 @@ import WideCard from "../../Common/Cards/WideCard/WideCard";
 import classes from "./About.module.scss";
 import { wideCardProps } from "./AboutContent";
 import ContentCard from "../../Common/Cards/ContentCard/ContentCard";
+import Divider from "../../Divider/Divider";
 
 const About = () => {
   const cards = wideCardProps.map((card) => (
@@ -15,7 +16,7 @@ const About = () => {
   return (
     <section className="section">
       <div className="section__content">
-        <h2 className="heading-secondary">About Me</h2>
+        <Divider>About</Divider>
         <div className={classes.cards}>{cards}</div>
       </div>
     </section>

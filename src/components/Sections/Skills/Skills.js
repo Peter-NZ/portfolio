@@ -1,7 +1,9 @@
 import React from "react";
-import Cockpit from "../../Common/Cockpit/Cockpit";
 import classes from "./Skills.module.scss";
 import { skillProps } from "./SkillsContent";
+import Divider from "../../Divider/Divider";
+
+
 const Skills = () => {
   let startCol = 1;
   const skills = skillProps.map((skill, i) => {
@@ -31,7 +33,7 @@ const Skills = () => {
   return (
     <div class="section">
       <div className="section__content">
-        <h2 className="heading-secondary">Technical Skills</h2>
+        <Divider>Technical Skills</Divider>
         <div className="u-center">
           <div className={classes.skills}>{skills}</div>
         </div>

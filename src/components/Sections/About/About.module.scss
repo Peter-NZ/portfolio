@@ -3,7 +3,7 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
-    padding-top:5rem;
+    padding-top: 3rem;
     @include moveUpChildren(3);
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import LargeCard from "../../Common/Cards/LargeCard/LargeCard";
 import classes from "./Projects.module.scss";
 import { projectCardContent } from "./ProjectsContent";
+import Divider from "../../Divider/Divider";
 
 const Projects = () => {
   const projectCards = projectCardContent.map((projectCard) => (
@@ -18,7 +19,7 @@ const Projects = () => {
   return (
     <div class="section">
       <div className="section__content">
-        <h2 className="heading-secondary">My Work</h2>
+        <Divider>My Work</Divider>
         <div className={classes.cards}>{projectCards}</div>
       </div>
     </div>
