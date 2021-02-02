@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Backdrop from "../../components/Backdrop/Backdrop";
 import Navigation from "../../components/Navigation/Navigation";
 import classes from "./Shell.module.scss";
@@ -13,44 +13,44 @@ import {
   initialRouteContext,
 } from "../../context/RouteContext";
 
-export default class Shell extends Component {
-  state = {
-    openSidenav: false,
+const Shell = () => {
+  const [openSidenav, setOpenSidenav] = useState(false);
+
+  const toggleSidenav = () => {
+    setOpenSidenav((prevState) => !prevState);
   };
-  toggleSidenav = () => {
-    this.setState((prevState) => ({ openSidenav: !prevState.openSidenav }));
-  };
-  render() {
-    return (
-      <React.Fragment>
-        <RouteContext.Provider value={initialRouteContext}>
-          <LayoutContext.Provider
-            value={{
-              openSidenav: this.state.openSidenav,
-              toggleSidenav: this.toggleSidenav,
-            }}
-          >
-            <Navigation />
-          </LayoutContext.Provider>
-          <main className={classes["center-wrapper"]}>
+
+  return (
+    <React.Fragment>
+      <RouteContext.Provider value={initialRouteContext}>
+        <LayoutContext.Provider
+          value={{
+            openSidenav: openSidenav,
+            toggleSidenav: toggleSidenav,
+          }}
+        >
+          <Navigation />
+        </LayoutContext.Provider>
+        <main className={classes["center-wrapper"]}>
           <div id="home">
-        <Hero />
-      </div>
-      <div id="about" className="section__wrapper section__wrapper--solid">
-        <About />
-      </div>
-      <div id="work" className="section__wrapper">
-        <Projects />
-      </div>
-      <div id="skills" className="section__wrapper">
-        <Skills />
-      </div>
-      <div id="contact" className="section__wrapper">
-        <Contact />
-      </div>          </main>
-        </RouteContext.Provider>
-        <Backdrop />
-      </React.Fragment>
-    );
-  }
-}
+            <Hero />
+          </div>
+          <div id="about" className="section__wrapper section__wrapper--solid">
+            <About />
+          </div>
+          <div id="work" className="section__wrapper">
+            <Projects />
+          </div>
+          <div id="skills" className="section__wrapper">
+            <Skills />
+          </div>
+          <div id="contact" className="section__wrapper">
+            <Contact />
+          </div>{" "}
+        </main>
+      </RouteContext.Provider>
+      <Backdrop />
+    </React.Fragment>
+  );
+};
+export default Shell;
