@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { routeContext } from "../../context/RouteContext";
 import NavigationItem from "./NavigationItem/NavigationItem";
 import classes from "./Navigation.module.scss";
@@ -9,6 +9,7 @@ import { CSSTransition } from "react-transition-group";
 const Navigation = () => {
   const layout = useContext(LayoutContext);
   const routes = useContext(routeContext);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const navItems = routes.routeLinks.map((routeLink) => (
     <NavigationItem key={routeLink.title} itemSettings={routeLink} />
   ));
@@ -33,6 +34,16 @@ const Navigation = () => {
     exit: classes["mobile-nav--exit"],
     exitActive: classes["mobile-nav--exit-active"],
   };
+
+  window.onscroll = () => {
+    const scrollTop =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    setScrollPosition((scrollTop / height) * 100);
+  };
+
   return (
     <React.Fragment>
       <CSSTransition
@@ -52,7 +63,16 @@ const Navigation = () => {
       >
         <nav className={classes["mobile-nav"]}>{navItemsMobile}</nav>
       </CSSTransition>
-      <nav className={classes.sidenav}>{navItems}</nav>
+
+      <nav className={classes.sidenav}>
+        <div className={classes["progress-wrapper"]}>
+          <div
+            style={{ height: scrollPosition + "%" }}
+            className={classes["progress-bar"]}
+          ></div>
+          {navItems}
+        </div>
+      </nav>
     </React.Fragment>
   );
 };

@@ -18,8 +18,8 @@ const Projects = () => {
   ));
   return (
     <div class="section">
+      <Divider>My Work</Divider>
       <div className="section__content">
-        <Divider>My Work</Divider>
         <div className={classes.cards}>{projectCards}</div>
       </div>
     </div>

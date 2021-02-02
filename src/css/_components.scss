@@ -43,6 +43,9 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
         padding:  0 0 9rem 0;
         &--solid {
             background-color: #2d3e508f;

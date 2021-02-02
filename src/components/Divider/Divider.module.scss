@@ -36,15 +36,15 @@
   }
   &::before {
     margin-right: 2rem;
-    border-top: rgba(white, .7) .2rem solid;
-    border-bottom: rgba(white, .7) .2rem solid;
+    //border-top: rgba(white, .7) .2rem solid;
+    //border-bottom: rgba(white, .7) .2rem solid;
     border-left: rgba(white, .7) .2rem solid;
   }
   
   &::after {
     margin-left: 2rem;
-    border-top: rgba(white, .7) .2rem solid;
-    border-bottom: rgba(white, .7) .2rem solid;
+    //border-top: rgba(white, .7) .2rem solid;
+    //border-bottom: rgba(white, .7) .2rem solid;
     border-right: rgba(white, .7) .2rem solid;
   } 
 }

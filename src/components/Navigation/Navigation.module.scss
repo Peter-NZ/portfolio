@@ -1,3 +1,5 @@
+@import '../../css/variables';
+
 .sidenav {
     position: fixed;
     left: 0;
@@ -187,6 +189,28 @@
         display:block;
         opacity: 1;
     }
+}
+
+.progress-bar {
+    height: 0%;
+    position: absolute;
+    left: -.5rem;
+    width: .2rem;
+    background-color: rgba($color-white, .3);
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);    	
+    }
+}
+
+.progress-wrapper {
+    position: relative;
 }
 
 
