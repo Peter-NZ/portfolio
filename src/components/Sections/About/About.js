@@ -1,6 +1,4 @@
 import React from "react";
-import Cockpit from "../../Common/Cockpit/Cockpit";
-import WideCard from "../../Common/Cards/WideCard/WideCard";
 import classes from "./About.module.scss";
 import { wideCardProps } from "./AboutContent";
 import ContentCard from "../../Common/Cards/ContentCard/ContentCard";

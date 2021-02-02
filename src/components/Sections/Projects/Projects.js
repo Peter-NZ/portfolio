@@ -17,7 +17,7 @@ const Projects = () => {
     </LargeCard>
   ));
   return (
-    <div class="section">
+    <div className="section">
       <Divider>My Work</Divider>
       <div className="section__content">
         <div className={classes.cards}>{projectCards}</div>

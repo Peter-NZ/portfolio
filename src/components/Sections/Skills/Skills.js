@@ -31,7 +31,7 @@ const Skills = () => {
   });
 
   return (
-    <div class="section">
+    <div className="section">
       <div className="section__content">
         <Divider>Technical Skills</Divider>
         <div className="u-center">
