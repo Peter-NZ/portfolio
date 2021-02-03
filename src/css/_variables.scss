@@ -13,5 +13,10 @@ $color-bluegrey-light: hsl(209, 23%, 60%);
 
 $color-body-text: hsl(209, 29%, 78%);
 
-// fontks
+// fonts
 $default-font-size: 1.6rem;
+
+
+//scrollbar
+$scrollbar-background: $color-bluegrey-dark;
+$scrollbar-scroller: $color-bluegrey-light;
