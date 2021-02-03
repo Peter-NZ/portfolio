@@ -10,13 +10,15 @@ import Skills from "../../components/Sections/Skills/Skills";
 import Contact from "../../components/Sections/Contact/Contact";
 import { useInView } from "react-intersection-observer";
 
+const THRESHOLD = [0.5, 0.75];
+
 const Shell = () => {
   const [openSidenav, setOpenSidenav] = useState(false);
-  const [homeRef, homeInView, homeEntry] = useInView();
-  const [aboutRef, aboutInView, aboutEntry] = useInView();
-  const [workRef, workInView, workEntry] = useInView();
-  const [skillsRef, skillsInView, skillsEntry] = useInView();
-  const [contactRef, contactInView, contactEntry] = useInView();
+  const [homeRef, homeInView, homeEntry] = useInView({threshold: THRESHOLD });
+  const [aboutRef, aboutInView, aboutEntry] = useInView({threshold: THRESHOLD });
+  const [workRef, workInView, workEntry] = useInView({threshold: THRESHOLD });
+  const [skillsRef, skillsInView, skillsEntry] = useInView({threshold: THRESHOLD });
+  const [contactRef, contactInView, contactEntry] = useInView({threshold: THRESHOLD });
 
   const toggleSidenav = () => {
     setOpenSidenav((prevState) => !prevState);

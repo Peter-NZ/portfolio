@@ -20,7 +20,7 @@ const Navigation = ({homeInView, aboutInView, workInView, skillsInView, contactI
       case(routes.pages.projects.title):
         return workInView;
       case(routes.pages.skills.title):
-        return skillsInView;
+        return contactInView ? false : skillsInView;
       case(routes.pages.contact.title):
         return contactInView;
       default:
