@@ -6,13 +6,33 @@ import NavigationButton from "./NavigationButton/NavigationButton";
 import LayoutContext from "../../context/LayoutContext";
 import { CSSTransition } from "react-transition-group";
 
-const Navigation = () => {
+const Navigation = ({homeInView, aboutInView, workInView, skillsInView, contactInView}) => {
   const layout = useContext(LayoutContext);
   const routes = useContext(routeContext);
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  const checkItemActive = (routeTitle) =>{
+    switch(routeTitle){
+      case(routes.pages.home.title):
+        return homeInView;
+      case(routes.pages.about.title):
+        return aboutInView;
+      case(routes.pages.projects.title):
+        return workInView;
+      case(routes.pages.skills.title):
+        return skillsInView;
+      case(routes.pages.contact.title):
+        return contactInView;
+      default:
+        return false;
+    }
+  }
+
   const navItems = routes.routeLinks.map((routeLink) => (
-    <NavigationItem key={routeLink.title} itemSettings={routeLink} />
+    <NavigationItem key={routeLink.title} itemSettings={routeLink} active={checkItemActive(routeLink.title)}
+    />
   ));
+
   const navItemsMobile = routes.routeLinks.map((routeLink) => (
     <NavigationItem
       mobile={true}
